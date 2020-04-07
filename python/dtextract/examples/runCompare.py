@@ -33,7 +33,7 @@ from ..util.util import *
 # Parameters
 
 # general training parameters
-trainingProp = 0.7 # proportion of training data
+trainingProp = 0.7  # proportion of training data
 
 # Gaussian mixture model parameters
 nComponents = 100
@@ -77,6 +77,8 @@ names = ['rfTrainScore', 'rfTestScore',
 #  nDataMatrixCols : int (the number of columns in the constructed data matrix)
 #  distType: 'CategoricalGaussianMixture' , the type of distribution
 #  return : float * float * float (the relative accuracy according to the distribution for the extracted dt, trained dt, and lasso)
+
+
 def runCompareSingle(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, distType):
     # Step 1: Learn random forest
     log('Parsing CSV...', INFO)
@@ -106,7 +108,7 @@ def runCompareSingle(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, di
         log('Done!', INFO)
 
     rfScoreFunc = f1Vec if isClassify else mseVec
-    
+
     rfTrainScore = rfScoreFunc(rf.predict, XTrain, yTrain)
     rfTestScore = rfScoreFunc(rf.predict, XTest, yTest)
 
@@ -132,24 +134,25 @@ def runCompareSingle(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, di
     log('Decision tree:', INFO)
     log(str(dtExtract), INFO)
     log('Node count: ' + str(dtExtract.nNodes()), INFO)
+    dtExtract.plot("../res/{}_dtExtract.pdf".format(path.split('/')[-1]))
 
     scoreFunc = f1 if isClassify else mse
-    
+
     dtExtractRelTrainScore = scoreFunc(dtExtract.eval, XTrain, rf.predict(XTrain))
     dtExtractRelTestScore = scoreFunc(dtExtract.eval, XTest, rf.predict(XTest))
 
     log('Relative training score: ' + str(dtExtractRelTrainScore), INFO)
     log('Relative test score: ' + str(dtExtractRelTestScore), INFO)
-    
+
     dtExtractTrainScore = scoreFunc(dtExtract.eval, XTrain, yTrain)
     dtExtractTestScore = scoreFunc(dtExtract.eval, XTest, yTest)
-    
+
     log('Training score: ' + str(dtExtractTrainScore), INFO)
     log('Test score: ' + str(dtExtractTestScore), INFO)
-    
+
     # Step 6: Train a (greedy) decision tree
     log('Training greedy decision tree', INFO)
-    maxLeaves = (maxDtSize + 1)/2
+    maxLeaves = int((maxDtSize + 1) / 2)
     dtConstructor = DecisionTreeClassifier if isClassify else DecisionTreeRegressor
     dtTrain = dtConstructor(max_leaf_nodes=maxLeaves)
     dtTrain.fit(XTrain, rfFunc(XTrain))
@@ -164,7 +167,7 @@ def runCompareSingle(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, di
 
     dtTrainTrainScore = scoreFunc(lambda x: dtTrain.predict(x.reshape(1, -1)), XTrain, yTrain)
     dtTrainTestScore = scoreFunc(lambda x: dtTrain.predict(x.reshape(1, -1)), XTest, yTest)
-    
+
     log('Training score: ' + str(dtTrainTrainScore), INFO)
     log('Test score: ' + str(dtTrainTestScore), INFO)
 
@@ -183,9 +186,11 @@ def runCompareSingle(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, di
 #  output : str (name of output file)
 #  distType: "SamplePlusGauss" | "CategoricalGaussianMixture", the type of distribution, default "GaussianMixture"
 #  nRepeats : int (default : 1) (number of repetitions to compute the average)
-def runCompare(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, output, distType = "CategoricalGaussianMixture", nRepeats=1):
+
+
+def runCompare(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, output, distType="CategoricalGaussianMixture", nRepeats=1):
     setCurOutput(output)
-    
+
     # initialize vals
     nVals = len(names)
     vals = [0.0 for i in range(nVals)]

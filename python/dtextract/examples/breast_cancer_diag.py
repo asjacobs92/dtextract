@@ -14,7 +14,7 @@
 
 # Main code
 
-from runCompare import *
+from .runCompare import *
 from ..data.consts import *
 
 if __name__ == "__main__":

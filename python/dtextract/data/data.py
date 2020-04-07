@@ -18,11 +18,11 @@ import pandas as pd
 
 from ..util.log import *
 
-CAT = 0 # categorical data type
-NUM = 1 # numeric data type
-ID = 2 # identifier (to be ignored)
-NUM_RES = 3 # numeric response
-CAT_RES = 4 # categorical response (only 2 categories currently handled!)
+CAT = 0  # categorical data type
+NUM = 1  # numeric data type
+ID = 2  # identifier (to be ignored)
+NUM_RES = 3  # numeric response
+CAT_RES = 4  # categorical response (only 2 categories currently handled!)
 
 # Splits the dataset into two randomly selected sets according to
 # the given proportion.
@@ -31,6 +31,8 @@ CAT_RES = 4 # categorical response (only 2 categories currently handled!)
 #  df : pandas.DataFrame
 #  prop : float (the proportion of training points, typically ~70%)
 #  return : (DataTable, DataTable) (the (training, test) datasets)
+
+
 def split(df, prop):
     # Checks
     if prop < 0.0 or prop > 1.0:
@@ -46,10 +48,11 @@ def split(df, prop):
     testRows = rows[splitPoint:]
 
     # Step 2: Split data frame into train and test sets
-    trainDf = df.iloc[trainRows,:]
-    testDf = df.iloc[testRows,:]
+    trainDf = df.iloc[trainRows, :]
+    testDf = df.iloc[testRows, :]
 
     return (trainDf, testDf)
+
 
 def constructDataMatrix(df, res, catFeats):
     # Step 1: Construct covariate and response columns
@@ -66,8 +69,8 @@ def constructDataMatrix(df, res, catFeats):
                 if str(df.columns[i]).startswith(str(cF) + '_'):
                     categorical = True
                     catFeatIndices[j].append(len(covCols))
-                    log('i:' + str(i) + ' df.columns[i]:' + \
-                            str(df.columns[i]) + ' catFeat:'+ str(cF), DEBUG)
+                    log('i:' + str(i) + ' df.columns[i]:' +
+                        str(df.columns[i]) + ' catFeat:' + str(cF), DEBUG)
             if not categorical:
                 numericFeatIndices.append(len(covCols))
             covCols.append(i)
@@ -77,11 +80,11 @@ def constructDataMatrix(df, res, catFeats):
         raise Exception('Invalid columns!')
 
     # Step 2: Construct covariate and response data frames
-    covDf = df.iloc[:,covCols]
-    resDf = df.iloc[:,resCols]
-    
+    covDf = df.iloc[:, covCols]
+    resDf = df.iloc[:, resCols]
+
     X = np.array(covDf.values)
-    y = np.array(resDf.values[:,0])
+    y = np.array(resDf.values[:, 0])
 
     return (X, y, catFeatIndices, numericFeatIndices)
 
@@ -98,24 +101,26 @@ def constructDataMatrix(df, res, catFeats):
 #  hasHeader : bool (whether the dataset has a header to ignore)
 #  dataTypes : [int] (categorical, numeric, or identifier)
 #  return : pandas.DataFrame
+
+
 def readCsv(path, hasHeader, dataTypes):
     # Step 1: Parse the CSV
-    
+
     log('Reading file: ' + path, INFO)
-    
+
     # Step 1a: Skip the first row if it is the header
     skiprows = 1 if hasHeader else 0
 
     # Step 1b: Initialize data structures
     cur = 0
-    names = [] # names
-    dtype = {} # data types
-    impute = [] # impute these columns
-    dummies = [] # convert these columns to indicators
-    usecols = [] # list of columsn to use
+    names = []  # names
+    dtype = {}  # data types
+    impute = []  # impute these columns
+    dummies = []  # convert these columns to indicators
+    usecols = []  # list of columsn to use
     res = None
     isCatRes = None
-    
+
     for i in range(len(dataTypes)):
         if not _isSkip(dataTypes[i]):
             # Step 1c: Append the name
@@ -138,12 +143,13 @@ def readCsv(path, hasHeader, dataTypes):
                 isCatRes = _isCatResponse(dataTypes[i])
             # Step 1i: Increment the name
             cur += 1
-        else:
-            names.append(-1)
+        # else:
+        #     names.append(-1)
 
     if res == None:
         raise Exception('No response variable!')
 
+    print("NAMES", names, usecols)
     # Step 1g: Parse the CSV
     df = pd.read_csv(path, header=None, skiprows=skiprows, usecols=usecols, names=names, dtype=dtype, na_values=['?'])
 
@@ -167,32 +173,45 @@ def readCsv(path, hasHeader, dataTypes):
         # Step 4b: Map response
         df[res] = df[res].apply(lambda val: resMap[val])
 
-    log('Columns: ' + str(len(df.columns)), INFO)
-    log('Column names:\n' + ''.join((str(i) + ': ' + str(col) + '\n' for (i, col) in zip(range(len(df.columns)), df.columns))), INFO)
+    log('Columns after: ' + str(len(df.columns)), INFO)
+    log('Column names after:\n' + ''.join((str(i) + ': ' + str(col) + '\n' for (i, col)
+                                           in zip(list(range(len(df.columns))), df.columns))), INFO)
 
     return (df, res, resMap, dummies)
 
 # Checks whether the datatype should be skipped (only ID).
+
+
 def _isSkip(dataType):
     return dataType == ID
 
 # Checks whether the data type should be imputed.
+
+
 def _isImpute(dataType):
     return dataType == NUM
 
 # Checks whether the data type should be converted from categorical to indicators.
+
+
 def _isDummy(dataType):
     return dataType == CAT
 
 # Checks whether the data type is a response type.
+
+
 def _isResponse(dataType):
     return dataType == NUM_RES or dataType == CAT_RES
 
 # Checks whether the data type is a categorical response.
+
+
 def _isCatResponse(dataType):
     return dataType == CAT_RES
 
 # Converts a data type to a pandas type.
+
+
 def _toDType(dataType):
     if dataType == CAT or dataType == CAT_RES:
         return str

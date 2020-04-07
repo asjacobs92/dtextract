@@ -53,7 +53,7 @@ def acc(func, xs, ys):
 #  return : float
 def accSet(func, approx, xs):
     # Sum the number of points where the func and approx agree
-    inds = map(lambda x: 1 if func(x) == approx(x) else 0, xs)
+    inds = [1 if func(x) == approx(x) else 0 for x in xs]
     return float(sum(inds))/float(len(xs))
 
 # Estimates the accuracy of the given approximation of the
@@ -128,8 +128,8 @@ def f1Vec(func, xs, ys):
 def _mse(yPreds, xs, ys):
     if len(xs) != len(ys):
         raise Exception('Invalid inputs!')
-    diffs = map(lambda z: z[0] - z[1], zip(yPreds, ys))
-    sqs = map(lambda z: z*z, diffs)
+    diffs = [z[0] - z[1] for z in zip(yPreds, ys)]
+    sqs = [z*z for z in diffs]
     return float(sum(sqs))/float(len(xs))
 
 def mse(func, xs, ys):
@@ -153,8 +153,8 @@ def mseVec(func, xs, ys):
 #  return : float
 def mseSet(func, approx, xs):
     # Sum the number of points where the func and approx agree
-    diffs = map(lambda x: func(x) - approx(x), xs)
-    sqs = map(lambda y: y*y, diffs)
+    diffs = [func(x) - approx(x) for x in xs]
+    sqs = [y*y for y in diffs]
     return np.sqrt(float(sum(sqs))/float(nPts))
 
 # Estimates the mean squared error of the given

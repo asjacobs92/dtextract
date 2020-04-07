@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from graphviz import Digraph
+
 # A data structure representing an internal
 # node in a decision tree. The branch field
 # is the conditional of the tree, with True
@@ -27,6 +29,8 @@
 #  branch : {eval : X -> bool}
 #  left : DTNode | {eval : X -> Y}
 #  right : DTNode | {eval : X -> Y}
+
+
 class DTNode:
     # initialization
     def __init__(self, branch, left, right):
@@ -42,19 +46,20 @@ class DTNode:
     def eval(self, x):
         val = self.branch.eval(x)
         if not type(val) == bool:
-            raise Exception('Invalid branch: ' + str(self.branch) + ', produced value: ' + str(val) + ', of type: ' + str(type(val)) + ', on input: ' + str(x))
+            raise Exception('Invalid branch: ' + str(self.branch) + ', produced value: ' +
+                            str(val) + ', of type: ' + str(type(val)) + ', on input: ' + str(x))
         if val:
             return self.left.eval(x)
         else:
             return self.right.eval(x)
-        
+
     # number of child nodes
     #
     # parameters/returns:
     #  return : int (number of child nodes)
     def nNodes(self):
         return 1 + (self.left.nNodes() if self.left.__class__ == DTNode else 1) + (self.right.nNodes() if self.right.__class__ == DTNode else 1)
-    
+
     # String representation using Lisp-like syntax
     def __str__(self):
         return '((' + str(self.branch) + ') ' + str(self.left) + ' ' + str(self.right) + ')'
@@ -71,11 +76,13 @@ class DTNode:
 #
 # fields:
 #  func : X -> Y
+
+
 class DTLeaf:
     # initialization
     def __init__(self, func):
         self.func = func
-    
+
     # evaluate the output func(x) for a given input x
     #
     # parameters/returns:
@@ -92,10 +99,12 @@ class DTLeaf:
 #
 # fields:
 #  func : X -> bool
+
+
 class DTBranch:
     def __init__(self, func):
         self.func = func
-    
+
     # evaluate the branch func(x) for a given input x
     def eval(self, x):
         return self.func(x)
@@ -108,11 +117,13 @@ class DTBranch:
 #
 # fields:
 #  root : DTNode | {eval : X -> Y}
+
+
 class DT:
     # initialization
     def __init__(self, root):
         self.root = root
-    
+
     # evaluate the output func(x) for a given input x
     #
     # parameters/returns:
@@ -120,7 +131,7 @@ class DT:
     #  return : Y
     def eval(self, x):
         return self.root.eval(x)
-    
+
     # node count
     #
     # parameters/returns:
@@ -128,10 +139,16 @@ class DT:
     def nNodes(self):
         return self.root.nNodes() if self.root.__class__ == DTNode else 1
 
+    def plot(self, path=""):
+        dot = Digraph(comment='Decision Tree')
+        dot = DT._toDot(self.root, None, None, dot)
+        dot.render(path, view=True)
+
     # Convert to string.
+
     def __str__(self):
         return DT._strHelper(self.root, '')
-    
+
     @staticmethod
     def _strHelper(node, prefix):
         tabChar = '    '
@@ -143,3 +160,19 @@ class DT:
             return res
         else:
             return prefix + str(node)
+
+    @staticmethod
+    def _toDot(node, parent, parentLabel, dot):
+        if node.__class__ == DTNode:
+            dot.node(str(node.branch), str(node.branch))
+            if parent:
+                dot.edge(str(parent.branch), str(node.branch), parentLabel)
+
+            DT._toDot(node.left, node, "false", dot)
+            DT._toDot(node.right, node, "true", dot)
+        else:
+            dot.node(str(node), str(node))
+            if parent:
+                dot.edge(str(parent.branch), str(node), parentLabel)
+
+        return dot

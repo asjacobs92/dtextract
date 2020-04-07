@@ -26,6 +26,8 @@ from ..util.util import *
 # fields:
 #  X : np.array([nRows, nCols]) (the example points)
 #  num_components : int, number of components to fit
+
+
 class GaussianMixtureDist:
     def __init__(self, X, numComponents):
         self.gmm = GaussianMixture(n_components=numComponents, covariance_type='diag')
@@ -38,7 +40,7 @@ class GaussianMixtureDist:
 
     # Samples a random point from the fitted mixture model
     def sampleUnconstrained(self):
-        return np.array((self.gmm.sample())[0][0,:])
+        return np.array((self.gmm.sample())[0][0, :])
 
     # Compute the probability of each component in the mixture
     def _computeProbabilities(self, limits):
@@ -68,10 +70,10 @@ class GaussianMixtureDist:
 
         # compute mass
         s = np.sum(probabilities)
-        
+
         log(("probabilities per component:", probabilities), DEBUG)
         log(("limits:", limits), DEBUG)
-        
+
         # density is zero (up to rounding) within these constraints
         xs = np.zeros((nPts, self.nCols))
         if s == 0:
@@ -81,14 +83,15 @@ class GaussianMixtureDist:
         probabilities = probabilities / s
 
         # Count of how many points to sample
-        chosenComponents = np.random.choice(self.numComponents, size = nPts, p = probabilities)
+        chosenComponents = np.random.choice(self.numComponents, size=nPts, p=probabilities)
 
         # Sample the points
         curIndex = 0
         for component in range(self.numComponents):
             curCount = np.sum(chosenComponents == component)
             nextIndex = curIndex + curCount
-            xs[curIndex:nextIndex,:] = sampleTruncGaussian(self.gmm.means_[component], self.gmm.covariances_[component], limits, curCount)
+            xs[curIndex:nextIndex, :] = sampleTruncGaussian(
+                self.gmm.means_[component], self.gmm.covariances_[component], limits, curCount)
             curIndex = nextIndex
 
         return xs
@@ -96,6 +99,8 @@ class GaussianMixtureDist:
 # Given indicator form of one categorical variable, fits and samples from it
 # fields:
 #  X : np.array([nRows, numCats]), each element is 0 or 1
+
+
 class CategoricalDist:
     def __init__(self, X):
         self.numCats = np.shape(X)[1]
@@ -120,8 +125,8 @@ class CategoricalDist:
             if len(allowedInds) == 1:
                 # forced to be one (we assume this can only happen once)
                 if allowedInds[0] == 1:
-                    xs = np.zeros((nPts, self.numCats), dtype = int)
-                    xs[:,c] = 1
+                    xs = np.zeros((nPts, self.numCats), dtype=int)
+                    xs[:, c] = 1
                     return xs
                 # forced to be zero
                 else:
@@ -131,7 +136,7 @@ class CategoricalDist:
         probs = probs / np.sum(probs)
 
         # Step 3: Sample points
-        sampled_cats = np.random.choice(self.numCats, nPts, p = probs)
+        sampled_cats = np.random.choice(self.numCats, nPts, p=probs)
 
         # Step 4: Construct points
         xs = np.zeros((nPts, self.numCats), dtype=int)
@@ -153,7 +158,7 @@ class CategoricalDist:
             # Step 1b: No indicators
             if len(allowedInds) == 0:
                 raise Exception('No points satisfy constraints for a category!')
-            
+
             # Step 1c: Single indicator
             if len(allowedInds) == 1:
                 # forced to be one (we assume this can only happen once)
@@ -166,10 +171,11 @@ class CategoricalDist:
         return probSum
 
 # Fields:
-#  catFeatInds: list of (# of categorical features) lists, each of (# categories 
-#       per categorical feature) listing the column indices that correspond to that 
+#  catFeatInds: list of (# of categorical features) lists, each of (# categories
+#       per categorical feature) listing the column indices that correspond to that
 #       feature in X)
 #  numericFeatInds: list of column indices that correspond to numeric features in X
+
 
 class CategoricalGaussianMixtureDist:
     def __init__(self, X, catFeatInds, numericFeatInds, numComponents):
@@ -177,11 +183,11 @@ class CategoricalGaussianMixtureDist:
         self.numericFeatInds = numericFeatInds
         self.categoricalDist = []
         for featureInd in catFeatInds:
-            self.categoricalDist.append(CategoricalDist(X[:,featureInd]))
+            self.categoricalDist.append(CategoricalDist(X[:, featureInd]))
         if len(numericFeatInds) == 0:
             self.GMDist = None
         else:
-            self.GMDist = GaussianMixtureDist(X[:,numericFeatInds], numComponents)
+            self.GMDist = GaussianMixtureDist(X[:, numericFeatInds], numComponents)
         self.nCols = np.shape(X)[1]
 
     def sample(self, cons, nPts):
@@ -208,7 +214,7 @@ class CategoricalGaussianMixtureDist:
         if not self.GMDist is None:
             mass *= self.GMDist.mass([limits[nF] for nF in self.numericFeatInds])
         return mass
-        
+
 
 #
 # TODO: Functions below are not up to date.
@@ -238,6 +244,8 @@ class LambdaDist:
 # fields:
 #  X : np.array([nRows, nCols]) (the example points)
 #  sigmas : np.array([nCols]) (the desired standard deviations)
+
+
 class XPlusGaussDist:
     def __init__(self, X, sigmas):
         self.X = X
@@ -250,11 +258,11 @@ class XPlusGaussDist:
     def sample(self):
         (nRows, nCols) = self.X.shape
         # Step 1: Sample a random example point x
-        row = random.randint(0, nRows-1)
+        row = random.randint(0, nRows - 1)
         # Step 2: Sample the noise \epsilon
         epsilon = [random.gauss(0, self.sigmas[i]) for i in range(nCols)]
         # Step 3: Return x + \epsilon
-        return self.X[row,:] + np.array(epsilon)
+        return self.X[row, :] + np.array(epsilon)
 
 # Rejection sampling. Fails after given number of tries.
 #
@@ -267,6 +275,8 @@ class XPlusGaussDist:
 # fields:
 #  dist : {sample : () -> (X | None)}
 #  nTries : int
+
+
 class RejectionSampler:
     def __init__(self, dist, nTries):
         self.dist = dist
@@ -300,9 +310,11 @@ class RejectionSampler:
             x = self.dist.sample()
             if _satisfies(x, cons):
                 count += 1
-        return float(count)/self.nTries
+        return float(count) / self.nTries
 
 # Checks whether a point satisfies the list of constraints.
+
+
 def _satisfies(x, cons):
     for con in cons:
         # Evaluating con[0].eval(x) yields True (left) vs. False (right).

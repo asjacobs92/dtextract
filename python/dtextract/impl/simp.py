@@ -27,6 +27,8 @@ from ..core.learn import *
 #  nPts : int (number of points to sample)
 #  nTestPts : int (number of points to sample to estimate the score)
 #  isClassify : bool (whether to use classifiers or regressors)
+
+
 class ParamsSimp:
     def __init__(self, nPts, nTestPts, isClassify):
         self.nPts = nPts
@@ -57,6 +59,8 @@ class ParamsSimp:
 #  paramsLearn : ParamsLearn
 #  params      : P
 #  return      : DT
+
+
 def learnDTSimp(gen, func, dist, paramsLearn, params):
     return learnDT(lambda func, dist, cons: gen(func, dist, cons, params), func, dist, [], paramsLearn)
 
@@ -68,10 +72,12 @@ def learnDTSimp(gen, func, dist, paramsLearn, params):
 #
 # fields:
 #  val : Y
+
+
 class LeafNode:
     def __init__(self, val):
         self.val = val
-    
+
     # Evaluate the leaf node on the given input x.
     #
     # parameters/returns:
@@ -83,6 +89,9 @@ class LeafNode:
     # Convert to string (just represents its constant value).
     def __str__(self):
         return str(self.val)
+
+    def __lt__(self, other):
+        return self.val < other.val
 
 # Axis aligned branches, represented by an index (indicating the feature)
 # and a threshold. The branch function is
@@ -96,6 +105,8 @@ class LeafNode:
 # fields:
 #  ind : int
 #  thresh : float
+
+
 class InternalNode:
     def __init__(self, ind, thresh):
         self.ind = ind
@@ -112,6 +123,15 @@ class InternalNode:
     # Convert to string.
     def __str__(self):
         return 'x[' + str(self.ind) + '] <= ' + str(self.thresh)
+
+    def __eq__(self, other):
+        return self.ind == other.ind and self.thresh == other.thresh
+
+    def __lt__(self, other):
+        if not self.thresh or not other.thresh:
+            return False
+        return self.thresh < other.thresh
+
 
 # Generates random axis-aligned features.
 #
@@ -131,6 +151,8 @@ class InternalNode:
 #  cons : C
 #  params : ParamsSimp
 #  return : (({eval : X -> bool} * C * C) | None) * float * {eval : X -> Y} * float * M * M
+
+
 def genAxisAligned(func, dist, cons, params):
     # Step 1: Sample points from the constrained distribution.
     log('Sampling ' + str(params.nPts) + ' points', INFO)
@@ -141,24 +163,25 @@ def genAxisAligned(func, dist, cons, params):
     # Step 3: If no points sampled, return a dummy leaf
     if len(xs) == 0:
         log('No points!', INFO)
-        return (None, 0.0, LeafNode(0.0), 0.0)
+        return ((InternalNode(None, None), None, None), 0.0, LeafNode(0.0), 0.0)  # (None, 0.0, LeafNode(0.0), 0.0)
 
     # Step 4: Classifier vs. regressor
     dtConstructor = DecisionTreeClassifier if params.isClassify else DecisionTreeRegressor
-    
+
     # Step 5: Construct internal node data structure
 
     # Step 5a: Construct internal node
     log('Generating internal node with number of samples ' + str(params.nPts) + '...', INFO)
-    dtInternal = dtConstructor(max_depth=1, min_impurity_split=0.0)
+    dtInternal = dtConstructor(max_depth=1)
     dtInternal.fit(xs, ys)
     log('Done!', INFO)
 
     # Step 5b: Check internal node, construct data structure if valid
     if dtInternal.tree_.node_count != 3:
         log('Invalid internal node, node count: ' + str(dtInternal.tree_.node_count), INFO)
-        dtInternalData = None
+        dtInternalData = (InternalNode(None, None), None, None)
     else:
+        print("NODE", dtInternal.tree_, dtInternal.tree_.feature)
         dtInternalNode = InternalNode(dtInternal.tree_.feature[0], dtInternal.tree_.threshold[0])
         lcons = cons + [(dtInternalNode, True)]
         rcons = cons + [(dtInternalNode, False)]
@@ -168,7 +191,7 @@ def genAxisAligned(func, dist, cons, params):
 
     # Step 6a: Construct leaf node
     log('Generating leaf with number of samples ' + str(params.nPts) + '...', INFO)
-    dtLeaf = dtConstructor(max_depth=1, min_samples_split=params.nPts+1)
+    dtLeaf = dtConstructor(max_depth=1, min_samples_split=params.nPts + 1)
     dtLeaf.fit(xs, ys)
     log('Done!', INFO)
 
@@ -177,14 +200,14 @@ def genAxisAligned(func, dist, cons, params):
         raise Exception('Invalid leaf node, node count: ' + str(dtLeaf.tree_.node_count))
 
     # Step 6c: Construct data
-    yPreds = set() # We just use the first value here, but we use the entire set later to compute the gain
+    yPreds = set()  # We just use the first value here, but we use the entire set later to compute the gain
     for x in xs:
         yPreds.add(dtLeaf.predict(x.reshape(1, -1))[0])
     val = list(yPreds)[0]
     dtLeafData = LeafNode(val)
 
     # Step 7: Compute gain
-    
+
     # Step 7a: Compute probability mass
     mass = dist.mass(cons)
     log('Current mass: ' + str(mass), INFO)

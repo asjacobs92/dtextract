@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from dt import *
+from .dt import *
+from ..impl.simp import *
 from ..util.log import *
 
-from Queue import PriorityQueue
+from queue import PriorityQueue
 
 # Flags for internal vs. leaf nodes
 _DT_INTERNAL = 0
@@ -27,6 +28,8 @@ _DT_LEAF = 1
 #  tgtScore : float (target score at which to stop)
 #  minGain : float (minimum gain to continue learning)
 #  maxSize : int (maximum number of nodes to use)
+
+
 class ParamsLearn:
     def __init__(self, tgtScore, minGain, maxSize):
         self.tgtScore = tgtScore
@@ -61,6 +64,8 @@ class ParamsLearn:
 #  initCons    : C
 #  params      : ParamsLearn
 #  return      : DT
+
+
 def learnDT(learnDTNode, func, dist, initCons, params):
     # Step 1: Initialize decision tree, score, and worklist
 
@@ -81,7 +86,7 @@ def learnDT(learnDTNode, func, dist, initCons, params):
     worklist.put_nowait((-gain, dtInternalData, dtLeafData, index, depth))
     score = dtLeafScore
     size = 1
-    
+
     # Step 2: Iterate through the worklist and construct internal nodes
     while True:
         # Step 2a: Get the next element (break if worklist is empty)
@@ -92,7 +97,8 @@ def learnDT(learnDTNode, func, dist, initCons, params):
         log('Internal node index: ' + str(index), INFO)
 
         # Step 2b: Get the internal data, and add to decision tree
-        if dtInternalData is None:
+        (dtInternalNode, lcons, rcons) = dtInternalData
+        if dtInternalNode.ind == None and dtInternalNode.thresh == None:
             log('No internal data!', INFO)
             worklist.put_nowait((2.0, dtInternalData, dtLeafData, index, depth))
             if gain < -1.5:
@@ -100,10 +106,10 @@ def learnDT(learnDTNode, func, dist, initCons, params):
                 break
             else:
                 continue
-        
+
         (dtInternalNode, lcons, rcons) = dtInternalData
         dt[index] = (dtInternalNode, _DT_INTERNAL)
-        
+
         # Step 2c: Learn the left and right children
         (dtInternalDataLeft, dtInternalScoreLeft, dtLeafDataLeft, dtLeafScoreLeft) = learnDTNode(func, dist, lcons)
         (dtInternalDataRight, dtInternalScoreRight, dtLeafDataRight, dtLeafScoreRight) = learnDTNode(func, dist, rcons)
@@ -111,8 +117,8 @@ def learnDT(learnDTNode, func, dist, initCons, params):
         gainRight = dtInternalScoreRight - dtLeafScoreRight
 
         # Step 2d: Add children to worklist
-        worklist.put_nowait((-gainLeft, dtInternalDataLeft, dtLeafDataLeft, 2*index+1, depth+1))
-        worklist.put_nowait((-gainRight, dtInternalDataRight, dtLeafDataRight, 2*index+2, depth+1))
+        worklist.put_nowait((-gainLeft, dtInternalDataLeft, dtLeafDataLeft, 2 * index + 1, depth + 1))
+        worklist.put_nowait((-gainRight, dtInternalDataRight, dtLeafDataRight, 2 * index + 2, depth + 1))
 
         # Step 2e: Compute score
         score += gain
@@ -147,10 +153,11 @@ def learnDT(learnDTNode, func, dist, initCons, params):
     # Step 4: Construct the decision tree
     return DT(_learnDTHelper(dt, 0))
 
+
 def _learnDTHelper(dt, index):
     (data, nodeType) = dt[index]
     if nodeType == _DT_INTERNAL:
-        return DTNode(data, _learnDTHelper(dt, 2*index+1), _learnDTHelper(dt, 2*index+2))
+        return DTNode(data, _learnDTHelper(dt, 2 * index + 1), _learnDTHelper(dt, 2 * index + 2))
     elif nodeType == _DT_LEAF:
         return data
     else:

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from data import *
+from .data import *
 
 # Constants
 
@@ -24,12 +24,27 @@ TMP_PATH = '../tmp'
 
 DIABETES_PATH = TMP_PATH + '/dataset_diabetes/diabetic_data.csv'
 DIABETES_HAS_HEADER = True
-DIABETES_DATA_TYPES = [ID, ID, CAT, CAT, CAT, CAT, CAT, CAT, CAT, NUM, CAT, CAT, NUM, NUM, NUM, NUM, NUM, NUM, CAT, CAT, CAT, NUM] + [CAT for i in range(27)] + [CAT_RES]
+DIABETES_DATA_TYPES = [ID, ID, CAT, CAT, CAT, CAT, CAT, CAT, CAT, NUM, CAT, CAT, NUM,
+                       NUM, NUM, NUM, NUM, NUM, CAT, CAT, CAT, NUM] + [CAT for i in range(27)] + [CAT_RES]
 
 DIABETES_IS_CLASSIFY = True
 DIABETES_N_DATA_MATRIX_COLS = 2518
 
 DIABETES_OUTPUT = 'diabetes.log'
+
+# Conflicts constants
+
+CONFLICTS_PATH = TMP_PATH + '/conflicts.csv'
+CONFLICTS_HAS_HEADER = True
+
+CONFLICTS_DATA_TYPES = [NUM, CAT, NUM, NUM, NUM, NUM, NUM,
+                        NUM, NUM, NUM, NUM, NUM, NUM, NUM,
+                        NUM, NUM, NUM, NUM, NUM, NUM_RES]
+
+CONFLICTS_IS_CLASSIFY = True
+CONFLICTS_N_DATA_MATRIX_COLS = 19
+
+CONFLICTS_OUTPUT = 'conflicts.log'
 
 # Iris constants
 
@@ -56,6 +71,8 @@ WINE_OUTPUT = 'wine.log'
 # Student constants
 
 # Returns the type of val.
+
+
 def getType(val):
     if val.__class__ == type(''):
         return CAT
@@ -63,9 +80,11 @@ def getType(val):
         return NUM
     raise Exception('Invalid type: ' + str(val))
 
+
 STUDENT_PATH = TMP_PATH + '/student.csv'
 STUDENT_HAS_HEADER = True
-STUDENT_EXAMPLE = ['GP','F',15,'R','GT3','T',1,1,'at_home','other','home','yes','yes','mother',2,4,1,'yes','yes','yes','yes','yes','no',3,1,2,1,1,1,2,7,10,10,'mother',2,4,0,'yes','yes','yes','yes','yes','no',3,1,2,1,1,1,4]
+STUDENT_EXAMPLE = ['GP', 'F', 15, 'R', 'GT3', 'T', 1, 1, 'at_home', 'other', 'home', 'yes', 'yes', 'mother', 2, 4, 1, 'yes', 'yes', 'yes',
+                   'yes', 'yes', 'no', 3, 1, 2, 1, 1, 1, 2, 7, 10, 10, 'mother', 2, 4, 0, 'yes', 'yes', 'yes', 'yes', 'yes', 'no', 3, 1, 2, 1, 1, 1, 4]
 STUDENT_DATA_TYPES = [ID] + [getType(val) for val in STUDENT_EXAMPLE] + [NUM_RES]
 
 STUDENT_IS_CLASSIFY = False
@@ -78,7 +97,7 @@ STUDENT_FEATURE_OUTPUT = 'student_feature.log'
 
 PROSTATE_PATH = TMP_PATH + '/prostate.csv'
 PROSTATE_HAS_HEADER = True
-PROSTATE_EXAMPLE = [-0.776528789,3.539509,47,-1.38629436,0,-1.38629436,'6',0,1.047319]
+PROSTATE_EXAMPLE = [-0.776528789, 3.539509, 47, -1.38629436, 0, -1.38629436, '6', 0, 1.047319]
 PROSTATE_DATA_TYPES = [ID] + [getType(val) for val in PROSTATE_EXAMPLE] + [CAT_RES]
 PROSTATE_IS_CLASSIFY = True
 PROSTATE_N_DATA_MATRIX_COLS = 113
@@ -89,7 +108,8 @@ PROSTATE_OUTPUT = 'prostate.log'
 
 CAR_LOAN_PATH = TMP_PATH + '/car_loan.csv'
 CAR_LOAN_HAS_HEADER = True
-CAR_LOAN_EXAMPLE = [1,755,'PA','F','2003-09-29','2003-09-29','2003-10-06',72,4.95,5.35,30015,'NA','N',4.99,4.95,1.12,414,59,14,4,3.419642857,-0.035714286,482.6937254,0.01608175,2,1]
+CAR_LOAN_EXAMPLE = [1, 755, 'PA', 'F', '2003-09-29', '2003-09-29', '2003-10-06', 72, 4.95, 5.35, 30015,
+                    'NA', 'N', 4.99, 4.95, 1.12, 414, 59, 14, 4, 3.419642857, -0.035714286, 482.6937254, 0.01608175, 2, 1]
 CAR_LOAN_DATA_TYPES = [ID] + [getType(val) for val in CAR_LOAN_EXAMPLE] + [CAT_RES]
 CAR_LOAN_IS_CLASSIFY = True
 CAR_LOAN_N_DATA_MATRIX_COLS = 2377
@@ -100,7 +120,8 @@ CAR_LOAN_OUTPUT = 'car_loan.log'
 
 BREAST_CANCER_DIAG_PATH = TMP_PATH + '/breast_cancer_diag.data'
 BREAST_CANCER_DIAG_HAS_HEADER = False
-BREAST_CANCER_DIAG_EXAMPLE = [17.99,10.38,122.8,1001,0.1184,0.2776,0.3001,0.1471,0.2419,0.07871,1.095,0.9053,8.589,153.4,0.006399,0.04904,0.05373,0.01587,0.03003,0.006193,25.38,17.33,184.6,2019,0.1622,0.6656,0.7119,0.2654,0.4601,0.1189]
+BREAST_CANCER_DIAG_EXAMPLE = [17.99, 10.38, 122.8, 1001, 0.1184, 0.2776, 0.3001, 0.1471, 0.2419, 0.07871, 1.095, 0.9053, 8.589, 153.4,
+                              0.006399, 0.04904, 0.05373, 0.01587, 0.03003, 0.006193, 25.38, 17.33, 184.6, 2019, 0.1622, 0.6656, 0.7119, 0.2654, 0.4601, 0.1189]
 BREAST_CANCER_DIAG_DATA_TYPES = [ID, CAT_RES] + [getType(val) for val in BREAST_CANCER_DIAG_EXAMPLE]
 BREAST_CANCER_DIAG_IS_CLASSIFY = True
 BREAST_CANCER_DIAG_N_DATA_MATRIX_COLS = 31
@@ -109,7 +130,8 @@ BREAST_CANCER_DIAG_OUTPUT = 'breast_cancer_diag.log'
 
 BREAST_CANCER_PROG_PATH = TMP_PATH + '/breast_cancer_prog.data'
 BREAST_CANCER_PROG_HAS_HEADER = False
-BREAST_CANCER_PROG_EXAMPLE = [18.02,27.6,117.5,1013,0.09489,0.1036,0.1086,0.07055,0.1865,0.06333,0.6249,1.89,3.972,71.55,0.004433,0.01421,0.03233,0.009854,0.01694,0.003495,21.63,37.08,139.7,1436,0.1195,0.1926,0.314,0.117,0.2677,0.08113,5,5]
+BREAST_CANCER_PROG_EXAMPLE = [18.02, 27.6, 117.5, 1013, 0.09489, 0.1036, 0.1086, 0.07055, 0.1865, 0.06333, 0.6249, 1.89, 3.972, 71.55,
+                              0.004433, 0.01421, 0.03233, 0.009854, 0.01694, 0.003495, 21.63, 37.08, 139.7, 1436, 0.1195, 0.1926, 0.314, 0.117, 0.2677, 0.08113, 5, 5]
 
 BREAST_CANCER_PROG_CL_DATA_TYPES = [ID, CAT_RES, ID] + [getType(val) for val in BREAST_CANCER_PROG_EXAMPLE]
 BREAST_CANCER_PROG_CL_IS_CLASSIFY = True

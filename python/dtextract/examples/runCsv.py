@@ -199,4 +199,4 @@ def runCsv(path, hasHeader, dataTypes, isClassify, nDataMatrixCols, distType = "
         vals[i] /= float(nRepeats)
 
     for i in range(nVals):
-        print names[i] + str(vals[i])
+        print(names[i] + str(vals[i]))

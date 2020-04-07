@@ -53,7 +53,7 @@ def setCurVerbosity(verbosity):
 #  verbosity : int
 def log(msg, verbosity):
     if verbosity <= _curVerbosity:
-        print msg
+        print(msg)
         if not _output is None:
             f = open(_output, 'a')
             f.write(msg + '\n')
