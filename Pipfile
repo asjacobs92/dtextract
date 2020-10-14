@@ -12,6 +12,9 @@ numpy = "*"
 scipy = "*"
 scikit-learn = "*"
 pandas = "*"
+setuptools = "*"
+wheel = "*"
+imbalanced-learn = "*"
 
 [requires]
 python_version = "3.7"

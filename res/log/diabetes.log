@@ -1,0 +1,3042 @@
+Parsing CSV...
+Reading file: ../tmp/dataset_diabetes/diabetic_data.csv
+Done!
+Rows read: 101766
+Columns after: 2551
+Column names after:
+0: time_in_hospital
+1: num_lab_procedures
+2: num_procedures
+3: num_medications
+4: number_outpatient
+5: number_emergency
+6: number_inpatient
+7: number_diagnoses
+8: readmitted
+9: race_AfricanAmerican
+10: race_Asian
+11: race_Caucasian
+12: race_Hispanic
+13: race_Other
+14: race_nan
+15: gender_Female
+16: gender_Male
+17: gender_Unknown/Invalid
+18: gender_nan
+19: age_[0-10)
+20: age_[10-20)
+21: age_[20-30)
+22: age_[30-40)
+23: age_[40-50)
+24: age_[50-60)
+25: age_[60-70)
+26: age_[70-80)
+27: age_[80-90)
+28: age_[90-100)
+29: age_nan
+30: weight_>200
+31: weight_[0-25)
+32: weight_[100-125)
+33: weight_[125-150)
+34: weight_[150-175)
+35: weight_[175-200)
+36: weight_[25-50)
+37: weight_[50-75)
+38: weight_[75-100)
+39: weight_nan
+40: admission_type_id_1
+41: admission_type_id_2
+42: admission_type_id_3
+43: admission_type_id_4
+44: admission_type_id_5
+45: admission_type_id_6
+46: admission_type_id_7
+47: admission_type_id_8
+48: admission_type_id_nan
+49: discharge_disposition_id_1
+50: discharge_disposition_id_10
+51: discharge_disposition_id_11
+52: discharge_disposition_id_12
+53: discharge_disposition_id_13
+54: discharge_disposition_id_14
+55: discharge_disposition_id_15
+56: discharge_disposition_id_16
+57: discharge_disposition_id_17
+58: discharge_disposition_id_18
+59: discharge_disposition_id_19
+60: discharge_disposition_id_2
+61: discharge_disposition_id_20
+62: discharge_disposition_id_22
+63: discharge_disposition_id_23
+64: discharge_disposition_id_24
+65: discharge_disposition_id_25
+66: discharge_disposition_id_27
+67: discharge_disposition_id_28
+68: discharge_disposition_id_3
+69: discharge_disposition_id_4
+70: discharge_disposition_id_5
+71: discharge_disposition_id_6
+72: discharge_disposition_id_7
+73: discharge_disposition_id_8
+74: discharge_disposition_id_9
+75: discharge_disposition_id_nan
+76: admission_source_id_1
+77: admission_source_id_10
+78: admission_source_id_11
+79: admission_source_id_13
+80: admission_source_id_14
+81: admission_source_id_17
+82: admission_source_id_2
+83: admission_source_id_20
+84: admission_source_id_22
+85: admission_source_id_25
+86: admission_source_id_3
+87: admission_source_id_4
+88: admission_source_id_5
+89: admission_source_id_6
+90: admission_source_id_7
+91: admission_source_id_8
+92: admission_source_id_9
+93: admission_source_id_nan
+94: payer_code_BC
+95: payer_code_CH
+96: payer_code_CM
+97: payer_code_CP
+98: payer_code_DM
+99: payer_code_FR
+100: payer_code_HM
+101: payer_code_MC
+102: payer_code_MD
+103: payer_code_MP
+104: payer_code_OG
+105: payer_code_OT
+106: payer_code_PO
+107: payer_code_SI
+108: payer_code_SP
+109: payer_code_UN
+110: payer_code_WC
+111: payer_code_nan
+112: medical_specialty_AllergyandImmunology
+113: medical_specialty_Anesthesiology
+114: medical_specialty_Anesthesiology-Pediatric
+115: medical_specialty_Cardiology
+116: medical_specialty_Cardiology-Pediatric
+117: medical_specialty_DCPTEAM
+118: medical_specialty_Dentistry
+119: medical_specialty_Dermatology
+120: medical_specialty_Emergency/Trauma
+121: medical_specialty_Endocrinology
+122: medical_specialty_Endocrinology-Metabolism
+123: medical_specialty_Family/GeneralPractice
+124: medical_specialty_Gastroenterology
+125: medical_specialty_Gynecology
+126: medical_specialty_Hematology
+127: medical_specialty_Hematology/Oncology
+128: medical_specialty_Hospitalist
+129: medical_specialty_InfectiousDiseases
+130: medical_specialty_InternalMedicine
+131: medical_specialty_Nephrology
+132: medical_specialty_Neurology
+133: medical_specialty_Neurophysiology
+134: medical_specialty_Obsterics&Gynecology-GynecologicOnco
+135: medical_specialty_Obstetrics
+136: medical_specialty_ObstetricsandGynecology
+137: medical_specialty_Oncology
+138: medical_specialty_Ophthalmology
+139: medical_specialty_Orthopedics
+140: medical_specialty_Orthopedics-Reconstructive
+141: medical_specialty_Osteopath
+142: medical_specialty_Otolaryngology
+143: medical_specialty_OutreachServices
+144: medical_specialty_Pathology
+145: medical_specialty_Pediatrics
+146: medical_specialty_Pediatrics-AllergyandImmunology
+147: medical_specialty_Pediatrics-CriticalCare
+148: medical_specialty_Pediatrics-EmergencyMedicine
+149: medical_specialty_Pediatrics-Endocrinology
+150: medical_specialty_Pediatrics-Hematology-Oncology
+151: medical_specialty_Pediatrics-InfectiousDiseases
+152: medical_specialty_Pediatrics-Neurology
+153: medical_specialty_Pediatrics-Pulmonology
+154: medical_specialty_Perinatology
+155: medical_specialty_PhysicalMedicineandRehabilitation
+156: medical_specialty_PhysicianNotFound
+157: medical_specialty_Podiatry
+158: medical_specialty_Proctology
+159: medical_specialty_Psychiatry
+160: medical_specialty_Psychiatry-Addictive
+161: medical_specialty_Psychiatry-Child/Adolescent
+162: medical_specialty_Psychology
+163: medical_specialty_Pulmonology
+164: medical_specialty_Radiologist
+165: medical_specialty_Radiology
+166: medical_specialty_Resident
+167: medical_specialty_Rheumatology
+168: medical_specialty_Speech
+169: medical_specialty_SportsMedicine
+170: medical_specialty_Surgeon
+171: medical_specialty_Surgery-Cardiovascular
+172: medical_specialty_Surgery-Cardiovascular/Thoracic
+173: medical_specialty_Surgery-Colon&Rectal
+174: medical_specialty_Surgery-General
+175: medical_specialty_Surgery-Maxillofacial
+176: medical_specialty_Surgery-Neuro
+177: medical_specialty_Surgery-Pediatric
+178: medical_specialty_Surgery-Plastic
+179: medical_specialty_Surgery-PlasticwithinHeadandNeck
+180: medical_specialty_Surgery-Thoracic
+181: medical_specialty_Surgery-Vascular
+182: medical_specialty_SurgicalSpecialty
+183: medical_specialty_Urology
+184: medical_specialty_nan
+185: diag_1_10
+186: diag_1_11
+187: diag_1_110
+188: diag_1_112
+189: diag_1_114
+190: diag_1_115
+191: diag_1_117
+192: diag_1_131
+193: diag_1_133
+194: diag_1_135
+195: diag_1_136
+196: diag_1_141
+197: diag_1_142
+198: diag_1_143
+199: diag_1_145
+200: diag_1_146
+201: diag_1_147
+202: diag_1_148
+203: diag_1_149
+204: diag_1_150
+205: diag_1_151
+206: diag_1_152
+207: diag_1_153
+208: diag_1_154
+209: diag_1_155
+210: diag_1_156
+211: diag_1_157
+212: diag_1_158
+213: diag_1_160
+214: diag_1_161
+215: diag_1_162
+216: diag_1_163
+217: diag_1_164
+218: diag_1_170
+219: diag_1_171
+220: diag_1_172
+221: diag_1_173
+222: diag_1_174
+223: diag_1_175
+224: diag_1_179
+225: diag_1_180
+226: diag_1_182
+227: diag_1_183
+228: diag_1_184
+229: diag_1_185
+230: diag_1_187
+231: diag_1_188
+232: diag_1_189
+233: diag_1_191
+234: diag_1_192
+235: diag_1_193
+236: diag_1_194
+237: diag_1_195
+238: diag_1_196
+239: diag_1_197
+240: diag_1_198
+241: diag_1_199
+242: diag_1_200
+243: diag_1_201
+244: diag_1_202
+245: diag_1_203
+246: diag_1_204
+247: diag_1_205
+248: diag_1_207
+249: diag_1_208
+250: diag_1_210
+251: diag_1_211
+252: diag_1_212
+253: diag_1_214
+254: diag_1_215
+255: diag_1_216
+256: diag_1_217
+257: diag_1_218
+258: diag_1_219
+259: diag_1_220
+260: diag_1_223
+261: diag_1_225
+262: diag_1_226
+263: diag_1_227
+264: diag_1_228
+265: diag_1_229
+266: diag_1_23
+267: diag_1_230
+268: diag_1_233
+269: diag_1_235
+270: diag_1_236
+271: diag_1_237
+272: diag_1_238
+273: diag_1_239
+274: diag_1_240
+275: diag_1_241
+276: diag_1_242
+277: diag_1_244
+278: diag_1_245
+279: diag_1_246
+280: diag_1_250
+281: diag_1_250.01
+282: diag_1_250.02
+283: diag_1_250.03
+284: diag_1_250.1
+285: diag_1_250.11
+286: diag_1_250.12
+287: diag_1_250.13
+288: diag_1_250.2
+289: diag_1_250.21
+290: diag_1_250.22
+291: diag_1_250.23
+292: diag_1_250.3
+293: diag_1_250.31
+294: diag_1_250.32
+295: diag_1_250.33
+296: diag_1_250.4
+297: diag_1_250.41
+298: diag_1_250.42
+299: diag_1_250.43
+300: diag_1_250.5
+301: diag_1_250.51
+302: diag_1_250.52
+303: diag_1_250.53
+304: diag_1_250.6
+305: diag_1_250.7
+306: diag_1_250.8
+307: diag_1_250.81
+308: diag_1_250.82
+309: diag_1_250.83
+310: diag_1_250.9
+311: diag_1_250.91
+312: diag_1_250.92
+313: diag_1_250.93
+314: diag_1_251
+315: diag_1_252
+316: diag_1_253
+317: diag_1_255
+318: diag_1_261
+319: diag_1_262
+320: diag_1_263
+321: diag_1_266
+322: diag_1_27
+323: diag_1_271
+324: diag_1_272
+325: diag_1_273
+326: diag_1_274
+327: diag_1_275
+328: diag_1_276
+329: diag_1_277
+330: diag_1_278
+331: diag_1_279
+332: diag_1_280
+333: diag_1_281
+334: diag_1_282
+335: diag_1_283
+336: diag_1_284
+337: diag_1_285
+338: diag_1_286
+339: diag_1_287
+340: diag_1_288
+341: diag_1_289
+342: diag_1_290
+343: diag_1_291
+344: diag_1_292
+345: diag_1_293
+346: diag_1_294
+347: diag_1_295
+348: diag_1_296
+349: diag_1_297
+350: diag_1_298
+351: diag_1_299
+352: diag_1_3
+353: diag_1_300
+354: diag_1_301
+355: diag_1_303
+356: diag_1_304
+357: diag_1_305
+358: diag_1_306
+359: diag_1_307
+360: diag_1_308
+361: diag_1_309
+362: diag_1_31
+363: diag_1_310
+364: diag_1_311
+365: diag_1_312
+366: diag_1_314
+367: diag_1_318
+368: diag_1_320
+369: diag_1_322
+370: diag_1_323
+371: diag_1_324
+372: diag_1_325
+373: diag_1_327
+374: diag_1_331
+375: diag_1_332
+376: diag_1_333
+377: diag_1_334
+378: diag_1_335
+379: diag_1_336
+380: diag_1_337
+381: diag_1_338
+382: diag_1_34
+383: diag_1_340
+384: diag_1_341
+385: diag_1_342
+386: diag_1_344
+387: diag_1_345
+388: diag_1_346
+389: diag_1_347
+390: diag_1_348
+391: diag_1_349
+392: diag_1_35
+393: diag_1_350
+394: diag_1_351
+395: diag_1_352
+396: diag_1_353
+397: diag_1_354
+398: diag_1_355
+399: diag_1_356
+400: diag_1_357
+401: diag_1_358
+402: diag_1_359
+403: diag_1_36
+404: diag_1_360
+405: diag_1_361
+406: diag_1_362
+407: diag_1_363
+408: diag_1_365
+409: diag_1_366
+410: diag_1_368
+411: diag_1_369
+412: diag_1_370
+413: diag_1_372
+414: diag_1_373
+415: diag_1_374
+416: diag_1_375
+417: diag_1_376
+418: diag_1_377
+419: diag_1_378
+420: diag_1_379
+421: diag_1_38
+422: diag_1_380
+423: diag_1_381
+424: diag_1_382
+425: diag_1_383
+426: diag_1_384
+427: diag_1_385
+428: diag_1_386
+429: diag_1_388
+430: diag_1_389
+431: diag_1_39
+432: diag_1_391
+433: diag_1_394
+434: diag_1_395
+435: diag_1_396
+436: diag_1_397
+437: diag_1_398
+438: diag_1_401
+439: diag_1_402
+440: diag_1_403
+441: diag_1_404
+442: diag_1_405
+443: diag_1_41
+444: diag_1_410
+445: diag_1_411
+446: diag_1_412
+447: diag_1_413
+448: diag_1_414
+449: diag_1_415
+450: diag_1_416
+451: diag_1_417
+452: diag_1_42
+453: diag_1_420
+454: diag_1_421
+455: diag_1_422
+456: diag_1_423
+457: diag_1_424
+458: diag_1_425
+459: diag_1_426
+460: diag_1_427
+461: diag_1_428
+462: diag_1_429
+463: diag_1_430
+464: diag_1_431
+465: diag_1_432
+466: diag_1_433
+467: diag_1_434
+468: diag_1_435
+469: diag_1_436
+470: diag_1_437
+471: diag_1_438
+472: diag_1_440
+473: diag_1_441
+474: diag_1_442
+475: diag_1_443
+476: diag_1_444
+477: diag_1_445
+478: diag_1_446
+479: diag_1_447
+480: diag_1_448
+481: diag_1_451
+482: diag_1_452
+483: diag_1_453
+484: diag_1_454
+485: diag_1_455
+486: diag_1_456
+487: diag_1_457
+488: diag_1_458
+489: diag_1_459
+490: diag_1_461
+491: diag_1_462
+492: diag_1_463
+493: diag_1_464
+494: diag_1_465
+495: diag_1_466
+496: diag_1_47
+497: diag_1_470
+498: diag_1_471
+499: diag_1_473
+500: diag_1_474
+501: diag_1_475
+502: diag_1_477
+503: diag_1_478
+504: diag_1_48
+505: diag_1_480
+506: diag_1_481
+507: diag_1_482
+508: diag_1_483
+509: diag_1_485
+510: diag_1_486
+511: diag_1_487
+512: diag_1_49
+513: diag_1_490
+514: diag_1_491
+515: diag_1_492
+516: diag_1_493
+517: diag_1_494
+518: diag_1_495
+519: diag_1_496
+520: diag_1_5
+521: diag_1_500
+522: diag_1_501
+523: diag_1_506
+524: diag_1_507
+525: diag_1_508
+526: diag_1_510
+527: diag_1_511
+528: diag_1_512
+529: diag_1_513
+530: diag_1_514
+531: diag_1_515
+532: diag_1_516
+533: diag_1_518
+534: diag_1_519
+535: diag_1_52
+536: diag_1_521
+537: diag_1_522
+538: diag_1_523
+539: diag_1_524
+540: diag_1_526
+541: diag_1_527
+542: diag_1_528
+543: diag_1_529
+544: diag_1_53
+545: diag_1_530
+546: diag_1_531
+547: diag_1_532
+548: diag_1_533
+549: diag_1_534
+550: diag_1_535
+551: diag_1_536
+552: diag_1_537
+553: diag_1_54
+554: diag_1_540
+555: diag_1_541
+556: diag_1_542
+557: diag_1_543
+558: diag_1_550
+559: diag_1_551
+560: diag_1_552
+561: diag_1_553
+562: diag_1_555
+563: diag_1_556
+564: diag_1_557
+565: diag_1_558
+566: diag_1_560
+567: diag_1_562
+568: diag_1_564
+569: diag_1_565
+570: diag_1_566
+571: diag_1_567
+572: diag_1_568
+573: diag_1_569
+574: diag_1_57
+575: diag_1_570
+576: diag_1_571
+577: diag_1_572
+578: diag_1_573
+579: diag_1_574
+580: diag_1_575
+581: diag_1_576
+582: diag_1_577
+583: diag_1_578
+584: diag_1_579
+585: diag_1_58
+586: diag_1_580
+587: diag_1_581
+588: diag_1_582
+589: diag_1_583
+590: diag_1_584
+591: diag_1_585
+592: diag_1_586
+593: diag_1_588
+594: diag_1_590
+595: diag_1_591
+596: diag_1_592
+597: diag_1_593
+598: diag_1_594
+599: diag_1_595
+600: diag_1_596
+601: diag_1_598
+602: diag_1_599
+603: diag_1_600
+604: diag_1_601
+605: diag_1_602
+606: diag_1_603
+607: diag_1_604
+608: diag_1_605
+609: diag_1_607
+610: diag_1_608
+611: diag_1_61
+612: diag_1_610
+613: diag_1_611
+614: diag_1_614
+615: diag_1_615
+616: diag_1_616
+617: diag_1_617
+618: diag_1_618
+619: diag_1_619
+620: diag_1_620
+621: diag_1_621
+622: diag_1_622
+623: diag_1_623
+624: diag_1_625
+625: diag_1_626
+626: diag_1_627
+627: diag_1_632
+628: diag_1_633
+629: diag_1_634
+630: diag_1_637
+631: diag_1_640
+632: diag_1_641
+633: diag_1_642
+634: diag_1_643
+635: diag_1_644
+636: diag_1_645
+637: diag_1_646
+638: diag_1_647
+639: diag_1_648
+640: diag_1_649
+641: diag_1_652
+642: diag_1_653
+643: diag_1_654
+644: diag_1_655
+645: diag_1_656
+646: diag_1_657
+647: diag_1_658
+648: diag_1_659
+649: diag_1_66
+650: diag_1_660
+651: diag_1_661
+652: diag_1_663
+653: diag_1_664
+654: diag_1_665
+655: diag_1_669
+656: diag_1_671
+657: diag_1_674
+658: diag_1_680
+659: diag_1_681
+660: diag_1_682
+661: diag_1_683
+662: diag_1_684
+663: diag_1_685
+664: diag_1_686
+665: diag_1_690
+666: diag_1_691
+667: diag_1_692
+668: diag_1_693
+669: diag_1_694
+670: diag_1_695
+671: diag_1_696
+672: diag_1_698
+673: diag_1_7
+674: diag_1_70
+675: diag_1_700
+676: diag_1_703
+677: diag_1_704
+678: diag_1_705
+679: diag_1_706
+680: diag_1_707
+681: diag_1_708
+682: diag_1_709
+683: diag_1_710
+684: diag_1_711
+685: diag_1_714
+686: diag_1_715
+687: diag_1_716
+688: diag_1_717
+689: diag_1_718
+690: diag_1_719
+691: diag_1_720
+692: diag_1_721
+693: diag_1_722
+694: diag_1_723
+695: diag_1_724
+696: diag_1_725
+697: diag_1_726
+698: diag_1_727
+699: diag_1_728
+700: diag_1_729
+701: diag_1_730
+702: diag_1_731
+703: diag_1_732
+704: diag_1_733
+705: diag_1_734
+706: diag_1_735
+707: diag_1_736
+708: diag_1_737
+709: diag_1_738
+710: diag_1_745
+711: diag_1_746
+712: diag_1_747
+713: diag_1_75
+714: diag_1_751
+715: diag_1_753
+716: diag_1_756
+717: diag_1_759
+718: diag_1_78
+719: diag_1_780
+720: diag_1_781
+721: diag_1_782
+722: diag_1_783
+723: diag_1_784
+724: diag_1_785
+725: diag_1_786
+726: diag_1_787
+727: diag_1_788
+728: diag_1_789
+729: diag_1_79
+730: diag_1_790
+731: diag_1_791
+732: diag_1_792
+733: diag_1_793
+734: diag_1_794
+735: diag_1_795
+736: diag_1_796
+737: diag_1_797
+738: diag_1_799
+739: diag_1_8
+740: diag_1_800
+741: diag_1_801
+742: diag_1_802
+743: diag_1_803
+744: diag_1_804
+745: diag_1_805
+746: diag_1_806
+747: diag_1_807
+748: diag_1_808
+749: diag_1_810
+750: diag_1_812
+751: diag_1_813
+752: diag_1_814
+753: diag_1_815
+754: diag_1_816
+755: diag_1_817
+756: diag_1_82
+757: diag_1_820
+758: diag_1_821
+759: diag_1_822
+760: diag_1_823
+761: diag_1_824
+762: diag_1_825
+763: diag_1_826
+764: diag_1_827
+765: diag_1_831
+766: diag_1_832
+767: diag_1_833
+768: diag_1_834
+769: diag_1_835
+770: diag_1_836
+771: diag_1_837
+772: diag_1_838
+773: diag_1_839
+774: diag_1_84
+775: diag_1_840
+776: diag_1_842
+777: diag_1_843
+778: diag_1_844
+779: diag_1_845
+780: diag_1_846
+781: diag_1_847
+782: diag_1_848
+783: diag_1_850
+784: diag_1_851
+785: diag_1_852
+786: diag_1_853
+787: diag_1_854
+788: diag_1_860
+789: diag_1_861
+790: diag_1_862
+791: diag_1_863
+792: diag_1_864
+793: diag_1_865
+794: diag_1_866
+795: diag_1_867
+796: diag_1_868
+797: diag_1_870
+798: diag_1_871
+799: diag_1_873
+800: diag_1_875
+801: diag_1_878
+802: diag_1_879
+803: diag_1_88
+804: diag_1_880
+805: diag_1_881
+806: diag_1_882
+807: diag_1_883
+808: diag_1_885
+809: diag_1_886
+810: diag_1_890
+811: diag_1_891
+812: diag_1_892
+813: diag_1_893
+814: diag_1_895
+815: diag_1_897
+816: diag_1_9
+817: diag_1_903
+818: diag_1_904
+819: diag_1_906
+820: diag_1_911
+821: diag_1_913
+822: diag_1_914
+823: diag_1_915
+824: diag_1_916
+825: diag_1_917
+826: diag_1_919
+827: diag_1_920
+828: diag_1_921
+829: diag_1_922
+830: diag_1_923
+831: diag_1_924
+832: diag_1_928
+833: diag_1_933
+834: diag_1_934
+835: diag_1_935
+836: diag_1_936
+837: diag_1_939
+838: diag_1_94
+839: diag_1_941
+840: diag_1_942
+841: diag_1_944
+842: diag_1_945
+843: diag_1_952
+844: diag_1_955
+845: diag_1_957
+846: diag_1_958
+847: diag_1_959
+848: diag_1_962
+849: diag_1_963
+850: diag_1_964
+851: diag_1_965
+852: diag_1_966
+853: diag_1_967
+854: diag_1_968
+855: diag_1_969
+856: diag_1_97
+857: diag_1_970
+858: diag_1_971
+859: diag_1_972
+860: diag_1_973
+861: diag_1_974
+862: diag_1_975
+863: diag_1_976
+864: diag_1_977
+865: diag_1_98
+866: diag_1_980
+867: diag_1_982
+868: diag_1_983
+869: diag_1_986
+870: diag_1_987
+871: diag_1_988
+872: diag_1_989
+873: diag_1_990
+874: diag_1_991
+875: diag_1_992
+876: diag_1_994
+877: diag_1_995
+878: diag_1_996
+879: diag_1_997
+880: diag_1_998
+881: diag_1_999
+882: diag_1_E909
+883: diag_1_V07
+884: diag_1_V25
+885: diag_1_V26
+886: diag_1_V43
+887: diag_1_V45
+888: diag_1_V51
+889: diag_1_V53
+890: diag_1_V54
+891: diag_1_V55
+892: diag_1_V56
+893: diag_1_V57
+894: diag_1_V58
+895: diag_1_V60
+896: diag_1_V63
+897: diag_1_V66
+898: diag_1_V67
+899: diag_1_V70
+900: diag_1_V71
+901: diag_1_nan
+902: diag_2_11
+903: diag_2_110
+904: diag_2_111
+905: diag_2_112
+906: diag_2_114
+907: diag_2_115
+908: diag_2_117
+909: diag_2_123
+910: diag_2_130
+911: diag_2_131
+912: diag_2_135
+913: diag_2_136
+914: diag_2_137
+915: diag_2_138
+916: diag_2_140
+917: diag_2_141
+918: diag_2_145
+919: diag_2_150
+920: diag_2_151
+921: diag_2_152
+922: diag_2_153
+923: diag_2_154
+924: diag_2_155
+925: diag_2_156
+926: diag_2_157
+927: diag_2_162
+928: diag_2_163
+929: diag_2_164
+930: diag_2_171
+931: diag_2_172
+932: diag_2_173
+933: diag_2_174
+934: diag_2_179
+935: diag_2_180
+936: diag_2_182
+937: diag_2_183
+938: diag_2_185
+939: diag_2_186
+940: diag_2_188
+941: diag_2_189
+942: diag_2_191
+943: diag_2_192
+944: diag_2_193
+945: diag_2_195
+946: diag_2_196
+947: diag_2_197
+948: diag_2_198
+949: diag_2_199
+950: diag_2_200
+951: diag_2_201
+952: diag_2_202
+953: diag_2_203
+954: diag_2_204
+955: diag_2_205
+956: diag_2_208
+957: diag_2_211
+958: diag_2_212
+959: diag_2_214
+960: diag_2_215
+961: diag_2_217
+962: diag_2_218
+963: diag_2_220
+964: diag_2_223
+965: diag_2_225
+966: diag_2_226
+967: diag_2_227
+968: diag_2_228
+969: diag_2_232
+970: diag_2_233
+971: diag_2_235
+972: diag_2_238
+973: diag_2_239
+974: diag_2_240
+975: diag_2_241
+976: diag_2_242
+977: diag_2_244
+978: diag_2_245
+979: diag_2_246
+980: diag_2_250
+981: diag_2_250.01
+982: diag_2_250.02
+983: diag_2_250.03
+984: diag_2_250.1
+985: diag_2_250.11
+986: diag_2_250.12
+987: diag_2_250.13
+988: diag_2_250.2
+989: diag_2_250.21
+990: diag_2_250.22
+991: diag_2_250.23
+992: diag_2_250.3
+993: diag_2_250.31
+994: diag_2_250.32
+995: diag_2_250.33
+996: diag_2_250.4
+997: diag_2_250.41
+998: diag_2_250.42
+999: diag_2_250.43
+1000: diag_2_250.5
+1001: diag_2_250.51
+1002: diag_2_250.52
+1003: diag_2_250.53
+1004: diag_2_250.6
+1005: diag_2_250.7
+1006: diag_2_250.8
+1007: diag_2_250.81
+1008: diag_2_250.82
+1009: diag_2_250.83
+1010: diag_2_250.9
+1011: diag_2_250.91
+1012: diag_2_250.92
+1013: diag_2_250.93
+1014: diag_2_251
+1015: diag_2_252
+1016: diag_2_253
+1017: diag_2_255
+1018: diag_2_256
+1019: diag_2_258
+1020: diag_2_259
+1021: diag_2_260
+1022: diag_2_261
+1023: diag_2_262
+1024: diag_2_263
+1025: diag_2_266
+1026: diag_2_268
+1027: diag_2_269
+1028: diag_2_27
+1029: diag_2_270
+1030: diag_2_271
+1031: diag_2_272
+1032: diag_2_273
+1033: diag_2_274
+1034: diag_2_275
+1035: diag_2_276
+1036: diag_2_277
+1037: diag_2_278
+1038: diag_2_279
+1039: diag_2_280
+1040: diag_2_281
+1041: diag_2_282
+1042: diag_2_283
+1043: diag_2_284
+1044: diag_2_285
+1045: diag_2_286
+1046: diag_2_287
+1047: diag_2_288
+1048: diag_2_289
+1049: diag_2_290
+1050: diag_2_291
+1051: diag_2_292
+1052: diag_2_293
+1053: diag_2_294
+1054: diag_2_295
+1055: diag_2_296
+1056: diag_2_297
+1057: diag_2_298
+1058: diag_2_299
+1059: diag_2_300
+1060: diag_2_301
+1061: diag_2_302
+1062: diag_2_303
+1063: diag_2_304
+1064: diag_2_305
+1065: diag_2_306
+1066: diag_2_307
+1067: diag_2_308
+1068: diag_2_309
+1069: diag_2_31
+1070: diag_2_310
+1071: diag_2_311
+1072: diag_2_312
+1073: diag_2_314
+1074: diag_2_316
+1075: diag_2_317
+1076: diag_2_318
+1077: diag_2_319
+1078: diag_2_320
+1079: diag_2_322
+1080: diag_2_323
+1081: diag_2_324
+1082: diag_2_325
+1083: diag_2_327
+1084: diag_2_331
+1085: diag_2_332
+1086: diag_2_333
+1087: diag_2_335
+1088: diag_2_336
+1089: diag_2_337
+1090: diag_2_338
+1091: diag_2_34
+1092: diag_2_340
+1093: diag_2_341
+1094: diag_2_342
+1095: diag_2_343
+1096: diag_2_344
+1097: diag_2_345
+1098: diag_2_346
+1099: diag_2_347
+1100: diag_2_348
+1101: diag_2_349
+1102: diag_2_35
+1103: diag_2_350
+1104: diag_2_351
+1105: diag_2_352
+1106: diag_2_353
+1107: diag_2_354
+1108: diag_2_355
+1109: diag_2_356
+1110: diag_2_357
+1111: diag_2_358
+1112: diag_2_359
+1113: diag_2_360
+1114: diag_2_362
+1115: diag_2_364
+1116: diag_2_365
+1117: diag_2_366
+1118: diag_2_368
+1119: diag_2_369
+1120: diag_2_372
+1121: diag_2_373
+1122: diag_2_374
+1123: diag_2_376
+1124: diag_2_377
+1125: diag_2_378
+1126: diag_2_379
+1127: diag_2_38
+1128: diag_2_380
+1129: diag_2_381
+1130: diag_2_382
+1131: diag_2_383
+1132: diag_2_386
+1133: diag_2_388
+1134: diag_2_389
+1135: diag_2_394
+1136: diag_2_395
+1137: diag_2_396
+1138: diag_2_397
+1139: diag_2_398
+1140: diag_2_40
+1141: diag_2_401
+1142: diag_2_402
+1143: diag_2_403
+1144: diag_2_404
+1145: diag_2_405
+1146: diag_2_41
+1147: diag_2_410
+1148: diag_2_411
+1149: diag_2_412
+1150: diag_2_413
+1151: diag_2_414
+1152: diag_2_415
+1153: diag_2_416
+1154: diag_2_42
+1155: diag_2_420
+1156: diag_2_421
+1157: diag_2_422
+1158: diag_2_423
+1159: diag_2_424
+1160: diag_2_425
+1161: diag_2_426
+1162: diag_2_427
+1163: diag_2_428
+1164: diag_2_429
+1165: diag_2_430
+1166: diag_2_431
+1167: diag_2_432
+1168: diag_2_433
+1169: diag_2_434
+1170: diag_2_435
+1171: diag_2_436
+1172: diag_2_437
+1173: diag_2_438
+1174: diag_2_440
+1175: diag_2_441
+1176: diag_2_442
+1177: diag_2_443
+1178: diag_2_444
+1179: diag_2_446
+1180: diag_2_447
+1181: diag_2_448
+1182: diag_2_451
+1183: diag_2_452
+1184: diag_2_453
+1185: diag_2_454
+1186: diag_2_455
+1187: diag_2_456
+1188: diag_2_457
+1189: diag_2_458
+1190: diag_2_459
+1191: diag_2_46
+1192: diag_2_460
+1193: diag_2_461
+1194: diag_2_462
+1195: diag_2_463
+1196: diag_2_464
+1197: diag_2_465
+1198: diag_2_466
+1199: diag_2_470
+1200: diag_2_472
+1201: diag_2_473
+1202: diag_2_474
+1203: diag_2_475
+1204: diag_2_477
+1205: diag_2_478
+1206: diag_2_480
+1207: diag_2_481
+1208: diag_2_482
+1209: diag_2_483
+1210: diag_2_484
+1211: diag_2_485
+1212: diag_2_486
+1213: diag_2_487
+1214: diag_2_490
+1215: diag_2_491
+1216: diag_2_492
+1217: diag_2_493
+1218: diag_2_494
+1219: diag_2_495
+1220: diag_2_496
+1221: diag_2_5
+1222: diag_2_500
+1223: diag_2_501
+1224: diag_2_506
+1225: diag_2_507
+1226: diag_2_508
+1227: diag_2_510
+1228: diag_2_511
+1229: diag_2_512
+1230: diag_2_513
+1231: diag_2_514
+1232: diag_2_515
+1233: diag_2_516
+1234: diag_2_517
+1235: diag_2_518
+1236: diag_2_519
+1237: diag_2_52
+1238: diag_2_520
+1239: diag_2_521
+1240: diag_2_522
+1241: diag_2_523
+1242: diag_2_524
+1243: diag_2_527
+1244: diag_2_528
+1245: diag_2_529
+1246: diag_2_53
+1247: diag_2_530
+1248: diag_2_531
+1249: diag_2_532
+1250: diag_2_533
+1251: diag_2_534
+1252: diag_2_535
+1253: diag_2_536
+1254: diag_2_537
+1255: diag_2_54
+1256: diag_2_540
+1257: diag_2_542
+1258: diag_2_543
+1259: diag_2_550
+1260: diag_2_552
+1261: diag_2_553
+1262: diag_2_555
+1263: diag_2_556
+1264: diag_2_557
+1265: diag_2_558
+1266: diag_2_560
+1267: diag_2_562
+1268: diag_2_564
+1269: diag_2_565
+1270: diag_2_566
+1271: diag_2_567
+1272: diag_2_568
+1273: diag_2_569
+1274: diag_2_570
+1275: diag_2_571
+1276: diag_2_572
+1277: diag_2_573
+1278: diag_2_574
+1279: diag_2_575
+1280: diag_2_576
+1281: diag_2_577
+1282: diag_2_578
+1283: diag_2_579
+1284: diag_2_580
+1285: diag_2_581
+1286: diag_2_583
+1287: diag_2_584
+1288: diag_2_585
+1289: diag_2_586
+1290: diag_2_588
+1291: diag_2_590
+1292: diag_2_591
+1293: diag_2_592
+1294: diag_2_593
+1295: diag_2_594
+1296: diag_2_595
+1297: diag_2_596
+1298: diag_2_598
+1299: diag_2_599
+1300: diag_2_600
+1301: diag_2_601
+1302: diag_2_602
+1303: diag_2_603
+1304: diag_2_604
+1305: diag_2_605
+1306: diag_2_607
+1307: diag_2_608
+1308: diag_2_610
+1309: diag_2_611
+1310: diag_2_614
+1311: diag_2_615
+1312: diag_2_616
+1313: diag_2_617
+1314: diag_2_618
+1315: diag_2_619
+1316: diag_2_620
+1317: diag_2_621
+1318: diag_2_622
+1319: diag_2_623
+1320: diag_2_625
+1321: diag_2_626
+1322: diag_2_627
+1323: diag_2_634
+1324: diag_2_641
+1325: diag_2_642
+1326: diag_2_644
+1327: diag_2_645
+1328: diag_2_646
+1329: diag_2_647
+1330: diag_2_648
+1331: diag_2_649
+1332: diag_2_652
+1333: diag_2_654
+1334: diag_2_656
+1335: diag_2_658
+1336: diag_2_659
+1337: diag_2_66
+1338: diag_2_661
+1339: diag_2_663
+1340: diag_2_664
+1341: diag_2_665
+1342: diag_2_670
+1343: diag_2_674
+1344: diag_2_680
+1345: diag_2_681
+1346: diag_2_682
+1347: diag_2_683
+1348: diag_2_684
+1349: diag_2_685
+1350: diag_2_686
+1351: diag_2_691
+1352: diag_2_692
+1353: diag_2_693
+1354: diag_2_694
+1355: diag_2_695
+1356: diag_2_696
+1357: diag_2_698
+1358: diag_2_7
+1359: diag_2_70
+1360: diag_2_701
+1361: diag_2_702
+1362: diag_2_703
+1363: diag_2_704
+1364: diag_2_705
+1365: diag_2_706
+1366: diag_2_707
+1367: diag_2_709
+1368: diag_2_710
+1369: diag_2_711
+1370: diag_2_712
+1371: diag_2_713
+1372: diag_2_714
+1373: diag_2_715
+1374: diag_2_716
+1375: diag_2_717
+1376: diag_2_718
+1377: diag_2_719
+1378: diag_2_721
+1379: diag_2_722
+1380: diag_2_723
+1381: diag_2_724
+1382: diag_2_725
+1383: diag_2_726
+1384: diag_2_727
+1385: diag_2_728
+1386: diag_2_729
+1387: diag_2_730
+1388: diag_2_731
+1389: diag_2_733
+1390: diag_2_734
+1391: diag_2_736
+1392: diag_2_737
+1393: diag_2_738
+1394: diag_2_741
+1395: diag_2_742
+1396: diag_2_745
+1397: diag_2_746
+1398: diag_2_747
+1399: diag_2_748
+1400: diag_2_75
+1401: diag_2_750
+1402: diag_2_751
+1403: diag_2_752
+1404: diag_2_753
+1405: diag_2_754
+1406: diag_2_755
+1407: diag_2_756
+1408: diag_2_758
+1409: diag_2_759
+1410: diag_2_78
+1411: diag_2_780
+1412: diag_2_781
+1413: diag_2_782
+1414: diag_2_783
+1415: diag_2_784
+1416: diag_2_785
+1417: diag_2_786
+1418: diag_2_787
+1419: diag_2_788
+1420: diag_2_789
+1421: diag_2_79
+1422: diag_2_790
+1423: diag_2_791
+1424: diag_2_792
+1425: diag_2_793
+1426: diag_2_794
+1427: diag_2_795
+1428: diag_2_796
+1429: diag_2_797
+1430: diag_2_799
+1431: diag_2_8
+1432: diag_2_800
+1433: diag_2_801
+1434: diag_2_802
+1435: diag_2_805
+1436: diag_2_806
+1437: diag_2_807
+1438: diag_2_808
+1439: diag_2_810
+1440: diag_2_811
+1441: diag_2_812
+1442: diag_2_813
+1443: diag_2_814
+1444: diag_2_815
+1445: diag_2_816
+1446: diag_2_820
+1447: diag_2_821
+1448: diag_2_822
+1449: diag_2_823
+1450: diag_2_824
+1451: diag_2_825
+1452: diag_2_826
+1453: diag_2_831
+1454: diag_2_832
+1455: diag_2_833
+1456: diag_2_836
+1457: diag_2_837
+1458: diag_2_840
+1459: diag_2_842
+1460: diag_2_843
+1461: diag_2_844
+1462: diag_2_845
+1463: diag_2_846
+1464: diag_2_847
+1465: diag_2_850
+1466: diag_2_851
+1467: diag_2_852
+1468: diag_2_853
+1469: diag_2_860
+1470: diag_2_861
+1471: diag_2_862
+1472: diag_2_863
+1473: diag_2_864
+1474: diag_2_865
+1475: diag_2_866
+1476: diag_2_867
+1477: diag_2_868
+1478: diag_2_869
+1479: diag_2_870
+1480: diag_2_871
+1481: diag_2_872
+1482: diag_2_873
+1483: diag_2_879
+1484: diag_2_88
+1485: diag_2_880
+1486: diag_2_881
+1487: diag_2_882
+1488: diag_2_883
+1489: diag_2_884
+1490: diag_2_891
+1491: diag_2_892
+1492: diag_2_893
+1493: diag_2_894
+1494: diag_2_9
+1495: diag_2_905
+1496: diag_2_906
+1497: diag_2_907
+1498: diag_2_908
+1499: diag_2_909
+1500: diag_2_910
+1501: diag_2_911
+1502: diag_2_912
+1503: diag_2_913
+1504: diag_2_915
+1505: diag_2_916
+1506: diag_2_917
+1507: diag_2_918
+1508: diag_2_919
+1509: diag_2_920
+1510: diag_2_921
+1511: diag_2_922
+1512: diag_2_923
+1513: diag_2_924
+1514: diag_2_927
+1515: diag_2_933
+1516: diag_2_934
+1517: diag_2_94
+1518: diag_2_942
+1519: diag_2_944
+1520: diag_2_945
+1521: diag_2_947
+1522: diag_2_948
+1523: diag_2_952
+1524: diag_2_953
+1525: diag_2_955
+1526: diag_2_958
+1527: diag_2_959
+1528: diag_2_96
+1529: diag_2_962
+1530: diag_2_963
+1531: diag_2_965
+1532: diag_2_967
+1533: diag_2_968
+1534: diag_2_969
+1535: diag_2_972
+1536: diag_2_974
+1537: diag_2_975
+1538: diag_2_977
+1539: diag_2_980
+1540: diag_2_987
+1541: diag_2_989
+1542: diag_2_99
+1543: diag_2_990
+1544: diag_2_991
+1545: diag_2_992
+1546: diag_2_994
+1547: diag_2_995
+1548: diag_2_996
+1549: diag_2_997
+1550: diag_2_998
+1551: diag_2_999
+1552: diag_2_E812
+1553: diag_2_E813
+1554: diag_2_E814
+1555: diag_2_E816
+1556: diag_2_E817
+1557: diag_2_E818
+1558: diag_2_E819
+1559: diag_2_E821
+1560: diag_2_E826
+1561: diag_2_E829
+1562: diag_2_E849
+1563: diag_2_E850
+1564: diag_2_E853
+1565: diag_2_E854
+1566: diag_2_E858
+1567: diag_2_E868
+1568: diag_2_E870
+1569: diag_2_E878
+1570: diag_2_E879
+1571: diag_2_E880
+1572: diag_2_E881
+1573: diag_2_E882
+1574: diag_2_E883
+1575: diag_2_E884
+1576: diag_2_E885
+1577: diag_2_E887
+1578: diag_2_E888
+1579: diag_2_E890
+1580: diag_2_E900
+1581: diag_2_E905
+1582: diag_2_E906
+1583: diag_2_E915
+1584: diag_2_E916
+1585: diag_2_E917
+1586: diag_2_E918
+1587: diag_2_E919
+1588: diag_2_E924
+1589: diag_2_E927
+1590: diag_2_E928
+1591: diag_2_E929
+1592: diag_2_E930
+1593: diag_2_E931
+1594: diag_2_E932
+1595: diag_2_E933
+1596: diag_2_E934
+1597: diag_2_E935
+1598: diag_2_E936
+1599: diag_2_E937
+1600: diag_2_E938
+1601: diag_2_E939
+1602: diag_2_E941
+1603: diag_2_E942
+1604: diag_2_E944
+1605: diag_2_E945
+1606: diag_2_E947
+1607: diag_2_E950
+1608: diag_2_E965
+1609: diag_2_E968
+1610: diag_2_E980
+1611: diag_2_V02
+1612: diag_2_V03
+1613: diag_2_V08
+1614: diag_2_V09
+1615: diag_2_V10
+1616: diag_2_V11
+1617: diag_2_V12
+1618: diag_2_V13
+1619: diag_2_V14
+1620: diag_2_V15
+1621: diag_2_V16
+1622: diag_2_V17
+1623: diag_2_V18
+1624: diag_2_V23
+1625: diag_2_V25
+1626: diag_2_V42
+1627: diag_2_V43
+1628: diag_2_V44
+1629: diag_2_V45
+1630: diag_2_V46
+1631: diag_2_V49
+1632: diag_2_V50
+1633: diag_2_V53
+1634: diag_2_V54
+1635: diag_2_V55
+1636: diag_2_V57
+1637: diag_2_V58
+1638: diag_2_V60
+1639: diag_2_V61
+1640: diag_2_V62
+1641: diag_2_V63
+1642: diag_2_V64
+1643: diag_2_V65
+1644: diag_2_V66
+1645: diag_2_V69
+1646: diag_2_V70
+1647: diag_2_V72
+1648: diag_2_V85
+1649: diag_2_V86
+1650: diag_2_nan
+1651: diag_3_11
+1652: diag_3_110
+1653: diag_3_111
+1654: diag_3_112
+1655: diag_3_115
+1656: diag_3_117
+1657: diag_3_122
+1658: diag_3_123
+1659: diag_3_131
+1660: diag_3_132
+1661: diag_3_135
+1662: diag_3_136
+1663: diag_3_138
+1664: diag_3_139
+1665: diag_3_14
+1666: diag_3_141
+1667: diag_3_146
+1668: diag_3_148
+1669: diag_3_150
+1670: diag_3_151
+1671: diag_3_152
+1672: diag_3_153
+1673: diag_3_154
+1674: diag_3_155
+1675: diag_3_156
+1676: diag_3_157
+1677: diag_3_158
+1678: diag_3_161
+1679: diag_3_162
+1680: diag_3_163
+1681: diag_3_164
+1682: diag_3_17
+1683: diag_3_170
+1684: diag_3_171
+1685: diag_3_172
+1686: diag_3_173
+1687: diag_3_174
+1688: diag_3_175
+1689: diag_3_179
+1690: diag_3_180
+1691: diag_3_182
+1692: diag_3_183
+1693: diag_3_185
+1694: diag_3_186
+1695: diag_3_188
+1696: diag_3_189
+1697: diag_3_191
+1698: diag_3_192
+1699: diag_3_193
+1700: diag_3_195
+1701: diag_3_196
+1702: diag_3_197
+1703: diag_3_198
+1704: diag_3_199
+1705: diag_3_200
+1706: diag_3_201
+1707: diag_3_202
+1708: diag_3_203
+1709: diag_3_204
+1710: diag_3_205
+1711: diag_3_208
+1712: diag_3_211
+1713: diag_3_214
+1714: diag_3_215
+1715: diag_3_216
+1716: diag_3_217
+1717: diag_3_218
+1718: diag_3_220
+1719: diag_3_223
+1720: diag_3_225
+1721: diag_3_226
+1722: diag_3_227
+1723: diag_3_228
+1724: diag_3_230
+1725: diag_3_233
+1726: diag_3_235
+1727: diag_3_236
+1728: diag_3_238
+1729: diag_3_239
+1730: diag_3_240
+1731: diag_3_241
+1732: diag_3_242
+1733: diag_3_243
+1734: diag_3_244
+1735: diag_3_245
+1736: diag_3_246
+1737: diag_3_250
+1738: diag_3_250.01
+1739: diag_3_250.02
+1740: diag_3_250.03
+1741: diag_3_250.1
+1742: diag_3_250.11
+1743: diag_3_250.12
+1744: diag_3_250.13
+1745: diag_3_250.2
+1746: diag_3_250.21
+1747: diag_3_250.22
+1748: diag_3_250.23
+1749: diag_3_250.3
+1750: diag_3_250.31
+1751: diag_3_250.4
+1752: diag_3_250.41
+1753: diag_3_250.42
+1754: diag_3_250.43
+1755: diag_3_250.5
+1756: diag_3_250.51
+1757: diag_3_250.52
+1758: diag_3_250.53
+1759: diag_3_250.6
+1760: diag_3_250.7
+1761: diag_3_250.8
+1762: diag_3_250.81
+1763: diag_3_250.82
+1764: diag_3_250.83
+1765: diag_3_250.9
+1766: diag_3_250.91
+1767: diag_3_250.92
+1768: diag_3_250.93
+1769: diag_3_251
+1770: diag_3_252
+1771: diag_3_253
+1772: diag_3_255
+1773: diag_3_256
+1774: diag_3_258
+1775: diag_3_259
+1776: diag_3_260
+1777: diag_3_261
+1778: diag_3_262
+1779: diag_3_263
+1780: diag_3_265
+1781: diag_3_266
+1782: diag_3_268
+1783: diag_3_27
+1784: diag_3_270
+1785: diag_3_271
+1786: diag_3_272
+1787: diag_3_273
+1788: diag_3_274
+1789: diag_3_275
+1790: diag_3_276
+1791: diag_3_277
+1792: diag_3_278
+1793: diag_3_279
+1794: diag_3_280
+1795: diag_3_281
+1796: diag_3_282
+1797: diag_3_283
+1798: diag_3_284
+1799: diag_3_285
+1800: diag_3_286
+1801: diag_3_287
+1802: diag_3_288
+1803: diag_3_289
+1804: diag_3_290
+1805: diag_3_291
+1806: diag_3_292
+1807: diag_3_293
+1808: diag_3_294
+1809: diag_3_295
+1810: diag_3_296
+1811: diag_3_297
+1812: diag_3_298
+1813: diag_3_299
+1814: diag_3_3
+1815: diag_3_300
+1816: diag_3_301
+1817: diag_3_303
+1818: diag_3_304
+1819: diag_3_305
+1820: diag_3_306
+1821: diag_3_307
+1822: diag_3_308
+1823: diag_3_309
+1824: diag_3_310
+1825: diag_3_311
+1826: diag_3_312
+1827: diag_3_313
+1828: diag_3_314
+1829: diag_3_315
+1830: diag_3_317
+1831: diag_3_318
+1832: diag_3_319
+1833: diag_3_323
+1834: diag_3_327
+1835: diag_3_331
+1836: diag_3_332
+1837: diag_3_333
+1838: diag_3_334
+1839: diag_3_335
+1840: diag_3_336
+1841: diag_3_337
+1842: diag_3_338
+1843: diag_3_34
+1844: diag_3_340
+1845: diag_3_341
+1846: diag_3_342
+1847: diag_3_343
+1848: diag_3_344
+1849: diag_3_345
+1850: diag_3_346
+1851: diag_3_347
+1852: diag_3_348
+1853: diag_3_349
+1854: diag_3_35
+1855: diag_3_350
+1856: diag_3_351
+1857: diag_3_353
+1858: diag_3_354
+1859: diag_3_355
+1860: diag_3_356
+1861: diag_3_357
+1862: diag_3_358
+1863: diag_3_359
+1864: diag_3_360
+1865: diag_3_361
+1866: diag_3_362
+1867: diag_3_365
+1868: diag_3_365.44
+1869: diag_3_366
+1870: diag_3_368
+1871: diag_3_369
+1872: diag_3_370
+1873: diag_3_372
+1874: diag_3_373
+1875: diag_3_374
+1876: diag_3_376
+1877: diag_3_377
+1878: diag_3_378
+1879: diag_3_379
+1880: diag_3_38
+1881: diag_3_380
+1882: diag_3_381
+1883: diag_3_382
+1884: diag_3_383
+1885: diag_3_384
+1886: diag_3_385
+1887: diag_3_386
+1888: diag_3_387
+1889: diag_3_388
+1890: diag_3_389
+1891: diag_3_391
+1892: diag_3_394
+1893: diag_3_395
+1894: diag_3_396
+1895: diag_3_397
+1896: diag_3_398
+1897: diag_3_401
+1898: diag_3_402
+1899: diag_3_403
+1900: diag_3_404
+1901: diag_3_405
+1902: diag_3_41
+1903: diag_3_410
+1904: diag_3_411
+1905: diag_3_412
+1906: diag_3_413
+1907: diag_3_414
+1908: diag_3_415
+1909: diag_3_416
+1910: diag_3_417
+1911: diag_3_42
+1912: diag_3_420
+1913: diag_3_421
+1914: diag_3_423
+1915: diag_3_424
+1916: diag_3_425
+1917: diag_3_426
+1918: diag_3_427
+1919: diag_3_428
+1920: diag_3_429
+1921: diag_3_430
+1922: diag_3_431
+1923: diag_3_432
+1924: diag_3_433
+1925: diag_3_434
+1926: diag_3_435
+1927: diag_3_436
+1928: diag_3_437
+1929: diag_3_438
+1930: diag_3_440
+1931: diag_3_441
+1932: diag_3_442
+1933: diag_3_443
+1934: diag_3_444
+1935: diag_3_445
+1936: diag_3_446
+1937: diag_3_447
+1938: diag_3_448
+1939: diag_3_451
+1940: diag_3_452
+1941: diag_3_453
+1942: diag_3_454
+1943: diag_3_455
+1944: diag_3_456
+1945: diag_3_457
+1946: diag_3_458
+1947: diag_3_459
+1948: diag_3_460
+1949: diag_3_461
+1950: diag_3_462
+1951: diag_3_463
+1952: diag_3_464
+1953: diag_3_465
+1954: diag_3_466
+1955: diag_3_47
+1956: diag_3_470
+1957: diag_3_472
+1958: diag_3_473
+1959: diag_3_475
+1960: diag_3_477
+1961: diag_3_478
+1962: diag_3_480
+1963: diag_3_481
+1964: diag_3_482
+1965: diag_3_483
+1966: diag_3_484
+1967: diag_3_485
+1968: diag_3_486
+1969: diag_3_487
+1970: diag_3_49
+1971: diag_3_490
+1972: diag_3_491
+1973: diag_3_492
+1974: diag_3_493
+1975: diag_3_494
+1976: diag_3_495
+1977: diag_3_496
+1978: diag_3_5
+1979: diag_3_500
+1980: diag_3_501
+1981: diag_3_506
+1982: diag_3_507
+1983: diag_3_508
+1984: diag_3_510
+1985: diag_3_511
+1986: diag_3_512
+1987: diag_3_514
+1988: diag_3_515
+1989: diag_3_516
+1990: diag_3_517
+1991: diag_3_518
+1992: diag_3_519
+1993: diag_3_521
+1994: diag_3_522
+1995: diag_3_523
+1996: diag_3_524
+1997: diag_3_525
+1998: diag_3_527
+1999: diag_3_528
+2000: diag_3_529
+2001: diag_3_53
+2002: diag_3_530
+2003: diag_3_531
+2004: diag_3_532
+2005: diag_3_533
+2006: diag_3_534
+2007: diag_3_535
+2008: diag_3_536
+2009: diag_3_537
+2010: diag_3_538
+2011: diag_3_54
+2012: diag_3_540
+2013: diag_3_542
+2014: diag_3_543
+2015: diag_3_550
+2016: diag_3_552
+2017: diag_3_553
+2018: diag_3_555
+2019: diag_3_556
+2020: diag_3_557
+2021: diag_3_558
+2022: diag_3_560
+2023: diag_3_562
+2024: diag_3_564
+2025: diag_3_565
+2026: diag_3_566
+2027: diag_3_567
+2028: diag_3_568
+2029: diag_3_569
+2030: diag_3_57
+2031: diag_3_570
+2032: diag_3_571
+2033: diag_3_572
+2034: diag_3_573
+2035: diag_3_574
+2036: diag_3_575
+2037: diag_3_576
+2038: diag_3_577
+2039: diag_3_578
+2040: diag_3_579
+2041: diag_3_580
+2042: diag_3_581
+2043: diag_3_582
+2044: diag_3_583
+2045: diag_3_584
+2046: diag_3_585
+2047: diag_3_586
+2048: diag_3_588
+2049: diag_3_590
+2050: diag_3_591
+2051: diag_3_592
+2052: diag_3_593
+2053: diag_3_594
+2054: diag_3_595
+2055: diag_3_596
+2056: diag_3_597
+2057: diag_3_598
+2058: diag_3_599
+2059: diag_3_600
+2060: diag_3_601
+2061: diag_3_602
+2062: diag_3_603
+2063: diag_3_604
+2064: diag_3_605
+2065: diag_3_607
+2066: diag_3_608
+2067: diag_3_610
+2068: diag_3_611
+2069: diag_3_614
+2070: diag_3_616
+2071: diag_3_617
+2072: diag_3_618
+2073: diag_3_619
+2074: diag_3_620
+2075: diag_3_621
+2076: diag_3_622
+2077: diag_3_623
+2078: diag_3_624
+2079: diag_3_625
+2080: diag_3_626
+2081: diag_3_627
+2082: diag_3_641
+2083: diag_3_642
+2084: diag_3_643
+2085: diag_3_644
+2086: diag_3_646
+2087: diag_3_647
+2088: diag_3_648
+2089: diag_3_649
+2090: diag_3_652
+2091: diag_3_653
+2092: diag_3_654
+2093: diag_3_655
+2094: diag_3_656
+2095: diag_3_657
+2096: diag_3_658
+2097: diag_3_659
+2098: diag_3_66
+2099: diag_3_660
+2100: diag_3_661
+2101: diag_3_663
+2102: diag_3_664
+2103: diag_3_665
+2104: diag_3_669
+2105: diag_3_670
+2106: diag_3_671
+2107: diag_3_674
+2108: diag_3_680
+2109: diag_3_681
+2110: diag_3_682
+2111: diag_3_684
+2112: diag_3_685
+2113: diag_3_686
+2114: diag_3_690
+2115: diag_3_692
+2116: diag_3_693
+2117: diag_3_694
+2118: diag_3_695
+2119: diag_3_696
+2120: diag_3_697
+2121: diag_3_698
+2122: diag_3_7
+2123: diag_3_70
+2124: diag_3_701
+2125: diag_3_702
+2126: diag_3_703
+2127: diag_3_704
+2128: diag_3_705
+2129: diag_3_706
+2130: diag_3_707
+2131: diag_3_708
+2132: diag_3_709
+2133: diag_3_710
+2134: diag_3_711
+2135: diag_3_712
+2136: diag_3_713
+2137: diag_3_714
+2138: diag_3_715
+2139: diag_3_716
+2140: diag_3_717
+2141: diag_3_718
+2142: diag_3_719
+2143: diag_3_720
+2144: diag_3_721
+2145: diag_3_722
+2146: diag_3_723
+2147: diag_3_724
+2148: diag_3_725
+2149: diag_3_726
+2150: diag_3_727
+2151: diag_3_728
+2152: diag_3_729
+2153: diag_3_730
+2154: diag_3_731
+2155: diag_3_732
+2156: diag_3_733
+2157: diag_3_734
+2158: diag_3_735
+2159: diag_3_736
+2160: diag_3_737
+2161: diag_3_738
+2162: diag_3_741
+2163: diag_3_742
+2164: diag_3_744
+2165: diag_3_745
+2166: diag_3_746
+2167: diag_3_747
+2168: diag_3_75
+2169: diag_3_750
+2170: diag_3_751
+2171: diag_3_752
+2172: diag_3_753
+2173: diag_3_754
+2174: diag_3_755
+2175: diag_3_756
+2176: diag_3_757
+2177: diag_3_758
+2178: diag_3_759
+2179: diag_3_78
+2180: diag_3_780
+2181: diag_3_781
+2182: diag_3_782
+2183: diag_3_783
+2184: diag_3_784
+2185: diag_3_785
+2186: diag_3_786
+2187: diag_3_787
+2188: diag_3_788
+2189: diag_3_789
+2190: diag_3_79
+2191: diag_3_790
+2192: diag_3_791
+2193: diag_3_792
+2194: diag_3_793
+2195: diag_3_794
+2196: diag_3_795
+2197: diag_3_796
+2198: diag_3_797
+2199: diag_3_799
+2200: diag_3_8
+2201: diag_3_800
+2202: diag_3_801
+2203: diag_3_802
+2204: diag_3_805
+2205: diag_3_807
+2206: diag_3_808
+2207: diag_3_810
+2208: diag_3_811
+2209: diag_3_812
+2210: diag_3_813
+2211: diag_3_814
+2212: diag_3_815
+2213: diag_3_816
+2214: diag_3_820
+2215: diag_3_821
+2216: diag_3_822
+2217: diag_3_823
+2218: diag_3_824
+2219: diag_3_825
+2220: diag_3_826
+2221: diag_3_831
+2222: diag_3_834
+2223: diag_3_836
+2224: diag_3_837
+2225: diag_3_838
+2226: diag_3_840
+2227: diag_3_841
+2228: diag_3_842
+2229: diag_3_844
+2230: diag_3_845
+2231: diag_3_847
+2232: diag_3_848
+2233: diag_3_850
+2234: diag_3_851
+2235: diag_3_852
+2236: diag_3_853
+2237: diag_3_854
+2238: diag_3_860
+2239: diag_3_861
+2240: diag_3_862
+2241: diag_3_863
+2242: diag_3_864
+2243: diag_3_865
+2244: diag_3_866
+2245: diag_3_867
+2246: diag_3_868
+2247: diag_3_870
+2248: diag_3_871
+2249: diag_3_872
+2250: diag_3_873
+2251: diag_3_875
+2252: diag_3_876
+2253: diag_3_877
+2254: diag_3_879
+2255: diag_3_88
+2256: diag_3_880
+2257: diag_3_881
+2258: diag_3_882
+2259: diag_3_883
+2260: diag_3_884
+2261: diag_3_890
+2262: diag_3_891
+2263: diag_3_892
+2264: diag_3_893
+2265: diag_3_9
+2266: diag_3_905
+2267: diag_3_906
+2268: diag_3_907
+2269: diag_3_908
+2270: diag_3_909
+2271: diag_3_910
+2272: diag_3_911
+2273: diag_3_912
+2274: diag_3_913
+2275: diag_3_915
+2276: diag_3_916
+2277: diag_3_917
+2278: diag_3_918
+2279: diag_3_919
+2280: diag_3_920
+2281: diag_3_921
+2282: diag_3_922
+2283: diag_3_923
+2284: diag_3_924
+2285: diag_3_928
+2286: diag_3_930
+2287: diag_3_933
+2288: diag_3_934
+2289: diag_3_935
+2290: diag_3_94
+2291: diag_3_942
+2292: diag_3_943
+2293: diag_3_944
+2294: diag_3_945
+2295: diag_3_948
+2296: diag_3_951
+2297: diag_3_952
+2298: diag_3_953
+2299: diag_3_955
+2300: diag_3_956
+2301: diag_3_958
+2302: diag_3_959
+2303: diag_3_962
+2304: diag_3_965
+2305: diag_3_966
+2306: diag_3_967
+2307: diag_3_969
+2308: diag_3_970
+2309: diag_3_971
+2310: diag_3_972
+2311: diag_3_980
+2312: diag_3_987
+2313: diag_3_989
+2314: diag_3_991
+2315: diag_3_992
+2316: diag_3_995
+2317: diag_3_996
+2318: diag_3_997
+2319: diag_3_998
+2320: diag_3_999
+2321: diag_3_E812
+2322: diag_3_E813
+2323: diag_3_E815
+2324: diag_3_E816
+2325: diag_3_E817
+2326: diag_3_E818
+2327: diag_3_E819
+2328: diag_3_E822
+2329: diag_3_E825
+2330: diag_3_E826
+2331: diag_3_E828
+2332: diag_3_E849
+2333: diag_3_E850
+2334: diag_3_E852
+2335: diag_3_E853
+2336: diag_3_E854
+2337: diag_3_E855
+2338: diag_3_E858
+2339: diag_3_E861
+2340: diag_3_E864
+2341: diag_3_E865
+2342: diag_3_E870
+2343: diag_3_E876
+2344: diag_3_E878
+2345: diag_3_E879
+2346: diag_3_E880
+2347: diag_3_E881
+2348: diag_3_E882
+2349: diag_3_E883
+2350: diag_3_E884
+2351: diag_3_E885
+2352: diag_3_E886
+2353: diag_3_E887
+2354: diag_3_E888
+2355: diag_3_E892
+2356: diag_3_E894
+2357: diag_3_E900
+2358: diag_3_E901
+2359: diag_3_E904
+2360: diag_3_E905
+2361: diag_3_E906
+2362: diag_3_E912
+2363: diag_3_E915
+2364: diag_3_E916
+2365: diag_3_E917
+2366: diag_3_E919
+2367: diag_3_E920
+2368: diag_3_E922
+2369: diag_3_E924
+2370: diag_3_E927
+2371: diag_3_E928
+2372: diag_3_E929
+2373: diag_3_E930
+2374: diag_3_E931
+2375: diag_3_E932
+2376: diag_3_E933
+2377: diag_3_E934
+2378: diag_3_E935
+2379: diag_3_E936
+2380: diag_3_E937
+2381: diag_3_E938
+2382: diag_3_E939
+2383: diag_3_E941
+2384: diag_3_E942
+2385: diag_3_E943
+2386: diag_3_E944
+2387: diag_3_E945
+2388: diag_3_E946
+2389: diag_3_E947
+2390: diag_3_E949
+2391: diag_3_E950
+2392: diag_3_E955
+2393: diag_3_E956
+2394: diag_3_E965
+2395: diag_3_E966
+2396: diag_3_E980
+2397: diag_3_E987
+2398: diag_3_V01
+2399: diag_3_V02
+2400: diag_3_V03
+2401: diag_3_V06
+2402: diag_3_V07
+2403: diag_3_V08
+2404: diag_3_V09
+2405: diag_3_V10
+2406: diag_3_V11
+2407: diag_3_V12
+2408: diag_3_V13
+2409: diag_3_V14
+2410: diag_3_V15
+2411: diag_3_V16
+2412: diag_3_V17
+2413: diag_3_V18
+2414: diag_3_V22
+2415: diag_3_V23
+2416: diag_3_V25
+2417: diag_3_V27
+2418: diag_3_V42
+2419: diag_3_V43
+2420: diag_3_V44
+2421: diag_3_V45
+2422: diag_3_V46
+2423: diag_3_V49
+2424: diag_3_V53
+2425: diag_3_V54
+2426: diag_3_V55
+2427: diag_3_V57
+2428: diag_3_V58
+2429: diag_3_V60
+2430: diag_3_V61
+2431: diag_3_V62
+2432: diag_3_V63
+2433: diag_3_V64
+2434: diag_3_V65
+2435: diag_3_V66
+2436: diag_3_V70
+2437: diag_3_V72
+2438: diag_3_V85
+2439: diag_3_V86
+2440: diag_3_nan
+2441: max_glu_serum_>200
+2442: max_glu_serum_>300
+2443: max_glu_serum_None
+2444: max_glu_serum_Norm
+2445: max_glu_serum_nan
+2446: A1Cresult_>7
+2447: A1Cresult_>8
+2448: A1Cresult_None
+2449: A1Cresult_Norm
+2450: A1Cresult_nan
+2451: metformin_Down
+2452: metformin_No
+2453: metformin_Steady
+2454: metformin_Up
+2455: metformin_nan
+2456: repaglinide_Down
+2457: repaglinide_No
+2458: repaglinide_Steady
+2459: repaglinide_Up
+2460: repaglinide_nan
+2461: nateglinide_Down
+2462: nateglinide_No
+2463: nateglinide_Steady
+2464: nateglinide_Up
+2465: nateglinide_nan
+2466: chlorpropamide_Down
+2467: chlorpropamide_No
+2468: chlorpropamide_Steady
+2469: chlorpropamide_Up
+2470: chlorpropamide_nan
+2471: glimepiride_Down
+2472: glimepiride_No
+2473: glimepiride_Steady
+2474: glimepiride_Up
+2475: glimepiride_nan
+2476: acetohexamide_No
+2477: acetohexamide_Steady
+2478: acetohexamide_nan
+2479: glipizide_Down
+2480: glipizide_No
+2481: glipizide_Steady
+2482: glipizide_Up
+2483: glipizide_nan
+2484: glyburide_Down
+2485: glyburide_No
+2486: glyburide_Steady
+2487: glyburide_Up
+2488: glyburide_nan
+2489: tolbutamide_No
+2490: tolbutamide_Steady
+2491: tolbutamide_nan
+2492: pioglitazone_Down
+2493: pioglitazone_No
+2494: pioglitazone_Steady
+2495: pioglitazone_Up
+2496: pioglitazone_nan
+2497: rosiglitazone_Down
+2498: rosiglitazone_No
+2499: rosiglitazone_Steady
+2500: rosiglitazone_Up
+2501: rosiglitazone_nan
+2502: acarbose_Down
+2503: acarbose_No
+2504: acarbose_Steady
+2505: acarbose_Up
+2506: acarbose_nan
+2507: miglitol_Down
+2508: miglitol_No
+2509: miglitol_Steady
+2510: miglitol_Up
+2511: miglitol_nan
+2512: troglitazone_No
+2513: troglitazone_Steady
+2514: troglitazone_nan
+2515: tolazamide_No
+2516: tolazamide_Steady
+2517: tolazamide_Up
+2518: tolazamide_nan
+2519: examide_No
+2520: examide_nan
+2521: citoglipton_No
+2522: citoglipton_nan
+2523: insulin_Down
+2524: insulin_No
+2525: insulin_Steady
+2526: insulin_Up
+2527: insulin_nan
+2528: glyburide-metformin_Down
+2529: glyburide-metformin_No
+2530: glyburide-metformin_Steady
+2531: glyburide-metformin_Up
+2532: glyburide-metformin_nan
+2533: glipizide-metformin_No
+2534: glipizide-metformin_Steady
+2535: glipizide-metformin_nan
+2536: glimepiride-pioglitazone_No
+2537: glimepiride-pioglitazone_Steady
+2538: glimepiride-pioglitazone_nan
+2539: metformin-rosiglitazone_No
+2540: metformin-rosiglitazone_Steady
+2541: metformin-rosiglitazone_nan
+2542: metformin-pioglitazone_No
+2543: metformin-pioglitazone_Steady
+2544: metformin-pioglitazone_nan
+2545: change_Ch
+2546: change_No
+2547: change_nan
+2548: diabetesMed_No
+2549: diabetesMed_Yes
+2550: diabetesMed_nan
+
+Done!
+Splitting into training and test...
+Done!
+Constructing data matrices...
+Done!
+Training random forest...
+Done!
+Training score: 1.0
+Test score: 0.41334558401286325
+Fitting Gaussian mixture with 100 components...
+Done!
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.9999999999999977
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.849999999999998
+Computed leaf score: 0.8184999999999981
+Internal node index: 0
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.7931130146592353
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.7253018519058707
+Computed leaf score: 0.7253018519058707
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.20688698534076222
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.12464940866780924
+Computed leaf score: 0.1193737905416198
+Current gain: 0.03149999999999986
+Current score: 0.849999999999998
+Current size: 3
+Internal node index: 2
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.14598034328682957
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.0918216359274158
+Computed leaf score: 0.07547183747929088
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.060906642053932696
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.0508570461150338
+Computed leaf score: 0.04963891327395514
+Current gain: 0.005275618126189444
+Current score: 0.8552756181261875
+Current size: 5
+Internal node index: 5
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.10377969540858971
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.062267817245153824
+Computed leaf score: 0.062267817245153824
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.042200647878239864
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.029540453514767903
+Computed leaf score: 0.029540453514767903
+Current gain: 0.01634979844812491
+Current score: 0.8716254165743124
+Current size: 7
+Internal node index: 6
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.05995759420340958
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.048295842130846416
+Computed leaf score: 0.048295842130846416
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Invalid internal node, node count: 1
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.0009490478505231244
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.0009490478505231244
+Computed leaf score: 0.0009490478505231244
+Current gain: 0.0012181328410786549
+Current score: 0.872843549415391
+Current size: 9
+Internal node index: 13
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.035614016162893225
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.026763933146414256
+Computed leaf score: 0.026763933146414256
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.024343578040516334
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.02232306106315348
+Computed leaf score: 0.022481294320416834
+Current gain: 0.0
+Current score: 0.872843549415391
+Current size: 11
+Internal node index: 1
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.6288690070194142
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.6030853777316182
+Computed leaf score: 0.6030853777316182
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.16424400763982117
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.1257287878482831
+Computed leaf score: 0.12359361574896542
+Current gain: 0.0
+Current score: 0.872843549415391
+Current size: 13
+Internal node index: 4
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.1581836262557691
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.12014046414125662
+Computed leaf score: 0.12014046414125662
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.006060381384052096
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.0040725762900830085
+Computed leaf score: 0.003727134551192039
+Current gain: 0.00213517209931767
+Current score: 0.8749787215147087
+Current size: 15
+Internal node index: 10
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.0010691278852216033
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.0007451821359994574
+Computed leaf score: 0.000708831787901923
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.004991253498830493
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.0034988687026801754
+Computed leaf score: 0.0034988687026801754
+Current gain: 0.0003454417388909694
+Current score: 0.8753241632535996
+Current size: 17
+Internal node index: 21
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.0007756172005547535
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.000592959349824109
+Computed leaf score: 0.000592959349824109
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.0002935106846668498
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.00017757396422344413
+Computed leaf score: 0.00016759460094477124
+Current gain: 3.63503480975344e-05
+Current score: 0.8753605136016972
+Current size: 19
+Internal node index: 44
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 6.499992419984966e-05
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 3.6367457589815885e-05
+Computed leaf score: 3.685495702131475e-05
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.00022851076046700015
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.00014167667148954008
+Computed leaf score: 0.0001404198623069716
+Current gain: 9.979363278672898e-06
+Current score: 0.8753704929649758
+Current size: 21
+Internal node index: 90
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 9.934232327618799e-05
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 5.821460143984616e-05
+Computed leaf score: 5.135998113378919e-05
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.00012916843719081215
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 9.24200168100261e-05
+Computed leaf score: 9.24200168100261e-05
+Current gain: 1.256809182568488e-06
+Current score: 0.8753717497741584
+Current size: 23
+Internal node index: 181
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 2.969770922526136e-05
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 1.9169871304906208e-05
+Computed leaf score: 1.9169871304906208e-05
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 6.964461405092663e-05
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 4.115996690409764e-05
+Computed leaf score: 4.115996690409764e-05
+Current gain: 6.8546203060569665e-06
+Current score: 0.8753786043944645
+Current size: 25
+Internal node index: 3
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.590349989246649
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.5752960645208596
+Computed leaf score: 0.5752960645208596
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.03851901777276522
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.029678903193915602
+Computed leaf score: 0.029678903193915602
+Current gain: 0.0
+Current score: 0.8753786043944645
+Current size: 27
+Internal node index: 8
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.026226155767033344
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.02251515472599813
+Computed leaf score: 0.02251515472599813
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.012292862005731878
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.007529377978510776
+Computed leaf score: 0.0069577598952442424
+Current gain: 0.0
+Current score: 0.8753786043944645
+Current size: 29
+Internal node index: 18
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.007973096604080403
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.005194472437558382
+Computed leaf score: 0.005194472437558382
+Sampling 2000 points
+Done! Sampled 2000 points
+Generating internal node with number of samples 2000...
+Done!
+Generating leaf with number of samples 2000...
+Done!
+Current mass: 0.004319765401651476
+Sampling 2000 test points
+Done! Sampled 2000 test points
+Computed internal score: 0.002749530678151164
+Computed leaf score: 0.00258969935829006
+Current gain: 0.0005716180832665337
+Current score: 0.875950222477731
+Current size: 31
+Reached maximum size, ending!
+Leaf node index: 38
+Leaf node index: 22
+Leaf node index: 11
+Leaf node index: 37
+Leaf node index: 7
+Leaf node index: 9
+Leaf node index: 17
+Leaf node index: 12
+Leaf node index: 27
+Leaf node index: 43
+Leaf node index: 364
+Leaf node index: 363
+Leaf node index: 182
+Leaf node index: 14
+Leaf node index: 89
+Leaf node index: 28
+Decision tree:
+(number_inpatient <= 1.002165973186493
+    (number_inpatient <= 0.37768223881721497
+        (number_emergency <= 0.30759676138404757
+            0
+            (number_outpatient <= 0.39697642624378204
+                0
+                (number_emergency <= 1.4651883244514465
+                    0
+                    1)))
+        (number_emergency <= 1.0009352564811707
+            0
+            (number_inpatient <= 0.4999854266643524
+                (number_outpatient <= 1.001284897327423
+                    0
+                    (number_emergency <= 1.5113317966461182
+                        0
+                        (admission_source_id_6 <= 0.5
+                            (number_diagnoses <= 8.000704288482666
+                                0
+                                1)
+                            1)))
+                1)))
+    (number_emergency <= 0.002638204488903284
+        (number_outpatient <= 0.7276412844657898
+            0
+            1)
+        (discharge_disposition_id_10 <= 0.5
+            (number_outpatient <= 0.06473992578685284
+                1
+                1)
+            0)))
+Node count: 31
+Relative training score: 0.18674778468456552
+Relative test score: 0.41983801176079005
+Training score: 0.18674778468456552
+Test score: 0.18198657096550128
+Training greedy decision tree
+Done!
+Node count: 31
+Relative training score: 0.42703037269552147
+Relative test score: 0.6548134738475464
+Training score: 0.42703037269552147
+Test score: 0.4289320488382876
+rfTrainScore: 1.0
+rfTestScore: 0.41334558401286325
+dtExtractRelTrainScore: 0.18674778468456552
+dtExtractRelTestScore: 0.41983801176079005
+dtExtractTrainScore: 0.18674778468456552
+dtExtractTestScore: 0.18198657096550128
+dtTrainRelTrainScore: 0.42703037269552147
+dtTrainRelTestScore: 0.6548134738475464
+dtTrainTrainScore: 0.42703037269552147
+dtTrainTestScore: 0.4289320488382876
